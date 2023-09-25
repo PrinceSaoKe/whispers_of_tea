@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: '茶语',
       debugShowCheckedModeBanner: false, // 取消显示屏幕右上角的debug模式
       theme: AppTheme.themeData,
-      initialRoute: AppRouter.welcome, // 初始页面
+      initialRoute: AppRouter.poetryCard, // 初始页面
       getPages: AppRouter.router, // 所有的页面
     );
   }

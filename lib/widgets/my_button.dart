@@ -8,7 +8,7 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
-      child: const Text('开始', style: AppStyle.buttonTextStyle),
+      child: const Text('开始', style: AppStyle.poetryTitleStyle),
     );
   }
 }

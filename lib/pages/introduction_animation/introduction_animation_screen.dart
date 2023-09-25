@@ -11,7 +11,7 @@ import 'components/top_back_skip_view.dart';
 import 'components/welcome_view.dart';
 
 class IntroductionAnimationScreen extends StatefulWidget {
-  const IntroductionAnimationScreen({Key? key}) : super(key: key);
+  const IntroductionAnimationScreen({super.key});
 
   @override
   State<IntroductionAnimationScreen> createState() =>
@@ -40,6 +40,7 @@ class _IntroductionAnimationScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF7EBE1),
+      // ClipRect会将超出边界的图片裁掉
       body: ClipRect(
         child: Stack(
           children: [

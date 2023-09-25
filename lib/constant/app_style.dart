@@ -11,5 +11,5 @@ class AppStyle {
   static const double buttonTextSize = 18;
 
   /// TextStyle
-  static const buttonTextStyle = TextStyle(fontSize: buttonTextSize);
+  static const poetryTitleStyle = TextStyle(fontSize: buttonTextSize);
 }

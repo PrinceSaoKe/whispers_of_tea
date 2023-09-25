@@ -11,8 +11,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      // body是个加载组件
-      body: Center(child: CircularProgressIndicator()),
+      body: Center(child: Text('已完成：')),
     );
   }
 }

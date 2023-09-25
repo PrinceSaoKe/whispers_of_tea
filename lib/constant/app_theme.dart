@@ -23,7 +23,8 @@ class AppTheme {
   );
 
   /// 配色
-  static const Color bgColor = Color(0xFFFECDA4);
+  static const Color poetryCardBgColor = Color(0xA2E8FAE6);
+  static const Color poetryCardBorderColor = Color(0xFF5D7A6A);
 
   /// 主题
   static ThemeData themeData = ThemeData(
