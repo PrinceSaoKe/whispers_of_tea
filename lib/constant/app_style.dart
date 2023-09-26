@@ -9,7 +9,10 @@ class AppStyle {
 
   /// fontsize & fontweight
   static const double buttonTextSize = 18;
+  static const double poetryTitleTextSize = 40;
+  static const double poetryTextSize = 24;
 
   /// TextStyle
-  static const poetryTitleStyle = TextStyle(fontSize: buttonTextSize);
+  static const poetryTitleStyle = TextStyle(fontSize: poetryTitleTextSize);
+  static const poetryStyle = TextStyle(fontSize: poetryTextSize);
 }
