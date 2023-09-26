@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/constant/app_assets.dart';
 import 'package:whispers_of_tea/constant/app_theme.dart';
 import 'package:whispers_of_tea/constant/poetry.dart';
+import 'package:whispers_of_tea/widgets/save_button.dart';
 
 class PoetryCardPage extends StatefulWidget {
   const PoetryCardPage({super.key});
@@ -37,9 +38,23 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
         children: [
           _getBackground(),
           Padding(
-            padding: const EdgeInsets.fromLTRB(30, 100, 30, 100),
+            padding: const EdgeInsets.fromLTRB(30, 80, 30, 120),
             child: _getCard(),
           ),
+          Positioned(
+            bottom: 40,
+            left: 30,
+            right: 30,
+            child: SaveButton(
+              onTap: () {
+                _saveImg();
+              },
+            ),
+          ),
+
+          // 茶叶装饰
+          Positioned(top: 60, left: 10, child: Image.asset(AppAssets.teaImg)),
+          Positioned(top: 300, right: 10, child: Image.asset(AppAssets.teaImg)),
         ],
       ),
     );
@@ -78,5 +93,10 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
         ],
       ),
     );
+  }
+
+  /// 将诗词卡片保存到相册
+  _saveImg() {
+    //TODO 保存图片
   }
 }

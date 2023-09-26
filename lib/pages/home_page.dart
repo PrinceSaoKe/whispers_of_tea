@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:whispers_of_tea/app_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,8 +12,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('已完成：')),
+    return Scaffold(
+      body: Center(
+          child: ElevatedButton(
+        onPressed: () {
+          Get.toNamed(AppRouter.poetryCard);
+        },
+        child: const Text('前往诗词卡片页面'),
+      )),
     );
   }
 }
