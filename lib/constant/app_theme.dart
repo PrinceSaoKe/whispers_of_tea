@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class AppTheme {
@@ -25,12 +27,21 @@ class AppTheme {
   /// 配色
   static const Color poetryCardBgColor = Color(0xA2E8FAE6);
   static const Color poetryCardBorderColor = Color(0xFF5D7A6A);
+  static const Color poetryColor = Color(0xFF1A472B);
   static const Color saveBtnTextColor = Color(0xFF5C806B);
   static const Color saveBtnBgColor = Color(0xCCDCF5E6);
   static const Color makeTeaBgColor = Color(0x8288B399);
+  static const Color makeTeaTitleColor = Color(0xFF1A6337);
+
+  /// 渐变色
+  static const LinearGradient makeTeaCircleColor = LinearGradient(
+    colors: [
+      Color.fromRGBO(169, 231, 163, 1),
+      Color.fromRGBO(118, 196, 151, 0.01),
+    ],
+    transform: GradientRotation(pi / 2), // 顺时针旋转 π/2
+  );
 
   /// 主题
-  static ThemeData themeData = ThemeData(
-    primarySwatch: themeColor,
-  );
+  static ThemeData themeData = ThemeData(primarySwatch: themeColor);
 }
