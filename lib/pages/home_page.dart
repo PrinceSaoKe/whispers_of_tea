@@ -14,12 +14,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: ElevatedButton(
-        onPressed: () {
-          Get.toNamed(AppRouter.poetryCard);
-        },
-        child: const Text('前往诗词卡片页面'),
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(AppRouter.poetryCard);
+              },
+              child: const Text('前往诗词卡片页面'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(AppRouter.makeTea);
+              },
+              child: const Text('前往制茶页面'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

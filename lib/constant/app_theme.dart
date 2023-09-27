@@ -27,6 +27,7 @@ class AppTheme {
   static const Color poetryCardBorderColor = Color(0xFF5D7A6A);
   static const Color saveBtnTextColor = Color(0xFF5C806B);
   static const Color saveBtnBgColor = Color(0xCCDCF5E6);
+  static const Color makeTeaBgColor = Color(0x8288B399);
 
   /// 主题
   static ThemeData themeData = ThemeData(

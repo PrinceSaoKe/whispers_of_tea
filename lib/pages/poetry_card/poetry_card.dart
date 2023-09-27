@@ -37,7 +37,7 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
   }
 
   /// 更换诗词卡片
-  refreshCard() {
+  _refreshCard() {
     setState(() {
       currCard = currCard % _cardNumber + 1;
       title = Poetry.poetryList[currCard - 1]['title'] ?? '';
@@ -100,21 +100,22 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
         borderRadius: const BorderRadius.all(Radius.circular(33)),
         border: Border.all(color: AppTheme.poetryCardBorderColor, width: 2),
       ),
-      child: Column(
-        children: [
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: AppStyle.poetryTitleStyle,
-          ),
-          GestureDetector(
-              onTap: refreshCard,
-              child: Text(
-                content,
-                textAlign: TextAlign.center,
-                style: AppStyle.poetryStyle,
-              )),
-        ],
+      child: GestureDetector(
+        onTap: _refreshCard,
+        child: Column(
+          children: [
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: AppStyle.poetryTitleStyle,
+            ),
+            Text(
+              content,
+              textAlign: TextAlign.center,
+              style: AppStyle.poetryStyle,
+            ),
+          ],
+        ),
       ),
     );
   }

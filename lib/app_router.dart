@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:whispers_of_tea/pages/home_page.dart';
+import 'package:whispers_of_tea/pages/make_tea_step/make_tea.dart';
 import 'package:whispers_of_tea/pages/poetry_card/poetry_card.dart';
 
 class AppRouter {
@@ -9,10 +10,12 @@ class AppRouter {
   static const String root = '/';
   static const String home = '/home';
   static const String poetryCard = '/poetryCard';
+  static const String makeTea = '/makeTea';
 
   /// 所有路由
   static final List<GetPage> router = [
     GetPage(name: home, page: () => const HomePage()),
     GetPage(name: poetryCard, page: () => const PoetryCardPage()),
+    GetPage(name: makeTea, page: () => const MakeTeaPage()),
   ];
 }

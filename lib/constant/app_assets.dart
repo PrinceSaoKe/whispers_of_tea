@@ -23,6 +23,13 @@ class AppAssets {
 
   static const String makeTeaStepBg = '$_makeTeaStepPath/make_tea_step_bg.png';
 
+  /// 泡茶步骤相关图片
+  static const String _brewTeaStepPath = '$_imagesPath/brew_tea_step';
+
+  static const String brewTeaStepBg = '$_brewTeaStepPath/brew_tea_step_bg.png';
+  static const String brewTeaStepBorder =
+      '$_brewTeaStepPath/brew_tea_step_border.png';
+
   /// 引导页相关图片
   static const String _introductionAnimationPath =
       '$_imagesPath/introduction_animation';
