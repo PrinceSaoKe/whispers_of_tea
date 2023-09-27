@@ -6,6 +6,7 @@ import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:whispers_of_tea/constant/app_assets.dart';
 import 'package:whispers_of_tea/constant/app_theme.dart';
 import 'package:whispers_of_tea/constant/poetry.dart';
+import 'package:whispers_of_tea/widgets/save_button.dart';
 
 import '../../constant/app_style.dart';
 
@@ -50,16 +51,23 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
         children: [
           _getBackground(),
           Padding(
-            padding: const EdgeInsets.fromLTRB(30, 80, 30, 110),
+            padding: const EdgeInsets.fromLTRB(30, 80, 30, 120),
             child: _getCard(),
           ),
           Positioned(
-            bottom: 30,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 10,left: 30,right: 30),
-              child: _storeCard(),
+            bottom: 40,
+            left: 30,
+            right: 30,
+            child: SaveButton(
+              onTap: () {
+                _saveLocalImage();
+              },
             ),
           ),
+
+          // 茶叶装饰
+          Positioned(top: 60, left: 10, child: Image.asset(AppAssets.teaImg)),
+          Positioned(top: 300, right: 10, child: Image.asset(AppAssets.teaImg)),
         ],
       ),
     );
@@ -102,29 +110,7 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
     );
   }
 
-  ///保存到手机
-  _storeCard(){
-    return GestureDetector(
-      onTap: (){
-        _saveLocalImage();
-      },
-      child: Container(
-        width: 349,
-        height: 58,
-        decoration: BoxDecoration(
-          color: AppTheme.poetryCardBgColor,
-          borderRadius: const BorderRadius.all(Radius.circular(33)),
-        ),
-
-        child: Center(
-          child: Text("保存到手机",style: TextStyle(fontSize: 20),),
-        ),
-
-      ),
-    );
-  }
-
-  ///保存卡片到相册方法
+  /// 保存卡片到相册方法
   Future<void> _saveLocalImage() async {
     // 构建图片的路径
     String imagePath = '${AppAssets.poetryCardPath}/${currCard}_poetry_card.png';

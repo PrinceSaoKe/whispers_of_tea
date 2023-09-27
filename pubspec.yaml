@@ -67,6 +67,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/images/poetry_card/
+    - assets/images/make_tea_step/
     - assets/images/introduction_animation/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

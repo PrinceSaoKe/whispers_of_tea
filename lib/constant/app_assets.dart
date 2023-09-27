@@ -18,6 +18,11 @@ class AppAssets {
   static const String poetryCard2 = '$poetryCardPath/2_poetry_card.png';
   static const String poetryBg2 = '$poetryCardPath/2_poetry_bg.png';
 
+  /// 泡茶步骤相关图片
+  static const String _makeTeaStepPath = '$_imagesPath/make_tea_step';
+
+  static const String makeTeaStepBg = '$_makeTeaStepPath/make_tea_step_bg.png';
+
   /// 引导页相关图片
   static const String _introductionAnimationPath =
       '$_imagesPath/introduction_animation';
