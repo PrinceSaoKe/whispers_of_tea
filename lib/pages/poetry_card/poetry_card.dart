@@ -1,10 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:whispers_of_tea/constant/app_assets.dart';
 import 'package:whispers_of_tea/constant/app_theme.dart';
 import 'package:whispers_of_tea/constant/poetry.dart';
 import 'package:whispers_of_tea/widgets/save_button.dart';
+
+import '../../constant/app_style.dart';
 
 class PoetryCardPage extends StatefulWidget {
   const PoetryCardPage({super.key});
@@ -31,6 +35,15 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
     super.initState();
   }
 
+  ///更换诗词卡片
+  refreshCard(){
+    setState(() {
+      currCard = currCard%_cardNumber+1;
+      title = Poetry.poetryList[currCard - 1]['title'] ?? '';
+      content = Poetry.poetryList[currCard - 1]['content'] ?? '';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +60,7 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
             right: 30,
             child: SaveButton(
               onTap: () {
-                _saveImg();
+                _saveLocalImage();
               },
             ),
           ),
@@ -88,15 +101,37 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
       ),
       child: Column(
         children: [
-          Text(title, textAlign: TextAlign.center),
-          Text(content, textAlign: TextAlign.center),
+          Text(title, textAlign: TextAlign.center,style: AppStyle.poetryTitleStyle,),
+          GestureDetector(
+              onTap: refreshCard,
+              child: Text(content, textAlign: TextAlign.center,style: AppStyle.poetryStyle,)),
         ],
       ),
     );
   }
 
-  /// 将诗词卡片保存到相册
-  _saveImg() {
-    //TODO 保存图片
+  /// 保存卡片到相册方法
+  Future<void> _saveLocalImage() async {
+    // 构建图片的路径
+    String imagePath = '${AppAssets.poetryCardPath}/${currCard}_poetry_card.png';
+
+    try {
+      // 从资源中加载图片
+      ByteData byteData = await rootBundle.load(imagePath);
+
+      // 将ByteData转换为Uint8List
+      Uint8List uint8List = byteData.buffer.asUint8List();
+
+      // 将图片保存到图库
+      final result = await ImageGallerySaver.saveImage(uint8List);
+
+      if (result['isSuccess']) {
+        print('图片保存成功');
+      } else {
+        print('图片保存失败');
+      }
+    } catch (e) {
+      print('发生错误: $e');
+    }
   }
 }

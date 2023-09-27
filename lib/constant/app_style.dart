@@ -9,11 +9,14 @@ class AppStyle {
   static const double paddingTB = 10;
 
   /// fontsize & fontweight
-  static const double titleTextSize = 40;
+  static const double poetryTitleTextSize = 40;
+  static const double poetryTextSize = 24;
   static const double saveBtnTextSize = 20;
 
   /// TextStyle
-  static const poetryTitleStyle = TextStyle(fontSize: titleTextSize);
+  static const poetryTitleStyle = TextStyle(fontSize: poetryTitleTextSize);
+  static const poetryStyle = TextStyle(fontSize: poetryTextSize);
+
   static const poetryBtnStyle = TextStyle(
     fontSize: saveBtnTextSize,
     color: AppTheme.saveBtnTextColor,
