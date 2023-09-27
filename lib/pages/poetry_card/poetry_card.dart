@@ -6,6 +6,7 @@ import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:whispers_of_tea/constant/app_assets.dart';
 import 'package:whispers_of_tea/constant/app_theme.dart';
 import 'package:whispers_of_tea/constant/poetry.dart';
+import 'package:whispers_of_tea/widgets/message_dialog.dart';
 import 'package:whispers_of_tea/widgets/save_button.dart';
 
 import '../../constant/app_style.dart';
@@ -35,10 +36,10 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
     super.initState();
   }
 
-  ///更换诗词卡片
-  refreshCard(){
+  /// 更换诗词卡片
+  refreshCard() {
     setState(() {
-      currCard = currCard%_cardNumber+1;
+      currCard = currCard % _cardNumber + 1;
       title = Poetry.poetryList[currCard - 1]['title'] ?? '';
       content = Poetry.poetryList[currCard - 1]['content'] ?? '';
     });
@@ -101,10 +102,18 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
       ),
       child: Column(
         children: [
-          Text(title, textAlign: TextAlign.center,style: AppStyle.poetryTitleStyle,),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: AppStyle.poetryTitleStyle,
+          ),
           GestureDetector(
               onTap: refreshCard,
-              child: Text(content, textAlign: TextAlign.center,style: AppStyle.poetryStyle,)),
+              child: Text(
+                content,
+                textAlign: TextAlign.center,
+                style: AppStyle.poetryStyle,
+              )),
         ],
       ),
     );
@@ -113,7 +122,8 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
   /// 保存卡片到相册方法
   Future<void> _saveLocalImage() async {
     // 构建图片的路径
-    String imagePath = '${AppAssets.poetryCardPath}/${currCard}_poetry_card.png';
+    String imagePath =
+        '${AppAssets.poetryCardPath}/${currCard}_poetry_card.png';
 
     try {
       // 从资源中加载图片
@@ -126,12 +136,12 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
       final result = await ImageGallerySaver.saveImage(uint8List);
 
       if (result['isSuccess']) {
-        print('图片保存成功');
+        getMessageDialog(context, title: '图片保存成功！');
       } else {
-        print('图片保存失败');
+        getMessageDialog(context, title: '图片保存失败！');
       }
     } catch (e) {
-      print('发生错误: $e');
+      getMessageDialog(context, title: '发生错误！', text: e.toString());
     }
   }
 }
