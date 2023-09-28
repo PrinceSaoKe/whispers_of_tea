@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/constant/app_theme.dart';
 
 class AppStyle {
@@ -39,5 +39,18 @@ class AppStyle {
   static const poetryBtnStyle = TextStyle(
     fontSize: _saveBtnTextSize,
     color: AppTheme.saveBtnTextColor,
+  );
+
+  static const makeTeaTextStyle = TextStyle(
+    fontSize: 20,
+    fontFamily: _jinShanCloudFont,
+    color: AppTheme.makeTeaTextColor,
+  );
+
+  static const makeTeaFinishStyle = TextStyle(
+    fontSize: 33,
+    fontFamily: _jinShanCloudFont,
+    color: Colors.white,
+    height: 1.6,
   );
 }
