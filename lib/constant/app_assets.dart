@@ -30,6 +30,11 @@ class AppAssets {
 
   static const String brewTeaStepBg = '$_brewTeaStepPath/brew_tea_step_bg.png';
 
+  /// 茶叶鉴赏相关图片
+  static const String _teaApprePath = '$_imagesPath/tea_appreciation';
+  static const String teaAppreSwiper1 = '$_teaApprePath/swiper_1.png';
+  static const String teaAppreSwiper2 = '$_teaApprePath/swiper_2.png';
+
   /// 引导页相关图片
   static const String _introductionAnimationPath =
       '$_imagesPath/introduction_animation';

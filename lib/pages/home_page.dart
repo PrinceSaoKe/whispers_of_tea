@@ -19,6 +19,12 @@ class _HomePageState extends State<HomePage> {
           children: [
             ElevatedButton(
               onPressed: () {
+                Get.toNamed(AppRouter.teaAppreciation);
+              },
+              child: const Text('前往茶叶鉴赏页面'),
+            ),
+            ElevatedButton(
+              onPressed: () {
                 Get.toNamed(AppRouter.poetryCard);
               },
               child: const Text('前往诗词卡片页面'),
