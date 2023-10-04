@@ -53,4 +53,40 @@ class AppStyle {
     color: Colors.white,
     height: 1.6,
   );
+
+  static const leadingTextStyle = TextStyle(
+    fontSize: 12,
+    fontFamily: _jinShanCloudFont,
+    color: AppTheme.leadingTextColor,
+  );
+
+  static const appBarTitleStyle = TextStyle(
+    fontSize: 24,
+    fontFamily: _jinShanCloudFont,
+    color: Colors.black,
+  );
+
+  static const subSwiperLeftStyle = TextStyle(
+    fontSize: 30,
+    fontFamily: _huangYouFont,
+    color: Colors.white,
+  );
+
+  static const subSwiperRightStyle = TextStyle(
+    fontSize: 20,
+    fontFamily: _huangYouFont,
+    color: Colors.white,
+  );
+
+  static const teaAppreLabelStyle = TextStyle(
+    fontSize: 20,
+    fontFamily: _jinShanCloudFont,
+    color: Colors.black,
+  );
+
+  static const teaAppreGridStyle = TextStyle(
+    fontSize: 14,
+    fontFamily: _huangYouFont,
+    color: AppTheme.subSwiperBgColor,
+  );
 }

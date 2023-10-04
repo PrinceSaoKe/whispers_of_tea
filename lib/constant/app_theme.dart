@@ -31,6 +31,10 @@ class AppTheme {
   static const Color makeTeaBgColor = Color(0x8288B399);
   static const Color makeTeaTitleColor = Color(0xFF1A6337);
   static const Color makeTeaTextColor = Color(0xFF094F00);
+  static const Color leadingTextColor = Color(0xFF547A64);
+  static const Color subSwiperBgColor = Color(0xFF094F00);
+  static const Color appBarBgColor = Color.fromRGBO(104, 166, 113, 0.44);
+  static const Color teaAppreGridBgColor = Color.fromRGBO(245, 255, 246, 0.71);
 
   /// 渐变色
   static const LinearGradient makeTeaCircleColor = LinearGradient(
@@ -53,6 +57,16 @@ class AppTheme {
       Color.fromRGBO(32, 115, 9, 1),
       Color.fromRGBO(32, 115, 9, 1),
       Color.fromRGBO(32, 115, 9, 1),
+    ],
+  );
+
+  static const LinearGradient teaAppreBgColor = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      appBarBgColor,
+      Color.fromRGBO(141, 214, 151, 0.22),
+      Color.fromRGBO(133, 201, 142, 0.1),
     ],
   );
 

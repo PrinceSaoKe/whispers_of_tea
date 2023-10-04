@@ -9,6 +9,8 @@ class AppAssets {
   static const String _imagesPath = '$_assetsPath/images';
 
   static const String teaImg = '$_imagesPath/tea.png';
+  static const String leadingImg = '$_imagesPath/leading.png';
+  static const String navTreeImg = '$_imagesPath/nav_tree.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';
@@ -32,8 +34,15 @@ class AppAssets {
 
   /// 茶叶鉴赏相关图片
   static const String _teaApprePath = '$_imagesPath/tea_appreciation';
+
   static const String teaAppreSwiper1 = '$_teaApprePath/swiper_1.png';
   static const String teaAppreSwiper2 = '$_teaApprePath/swiper_2.png';
+  static const String subSwiperLeft = '$_teaApprePath/sub_swiper_left.png';
+  static const String subSwiperRight = '$_teaApprePath/sub_swiper_right.png';
+  static const String teaAppreGrid1 = '$_teaApprePath/tea_appre_grid1.png';
+  static const String teaAppreGrid2 = '$_teaApprePath/tea_appre_grid2.png';
+  static const String teaAppreGrid3 = '$_teaApprePath/tea_appre_grid3.png';
+  static const String teaAppreGrid4 = '$_teaApprePath/tea_appre_grid4.png';
 
   /// 引导页相关图片
   static const String _introductionAnimationPath =
