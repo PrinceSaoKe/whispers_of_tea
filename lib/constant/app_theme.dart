@@ -36,6 +36,11 @@ class AppTheme {
   static const Color appBarBgColor = Color.fromRGBO(104, 166, 113, 0.44);
   static const Color teaAppreGridBgColor = Color.fromRGBO(245, 255, 246, 0.71);
   static const Color navIconLabelColor = Color(0xFF547A64);
+  static const Color navCircleBgColor = Color(0xFFD9E6C8);
+  static const Color teaInfoHeadBorderColor = Color(0xFF487555);
+
+  /// TeaInfo主题色
+  static const Color greenTeaThemeColor = Color(0xFF6DA67E);
 
   /// 渐变色
   static const LinearGradient makeTeaCircleColor = LinearGradient(
@@ -61,7 +66,7 @@ class AppTheme {
     ],
   );
 
-  static const LinearGradient teaAppreBgColor = LinearGradient(
+  static const LinearGradient gradientBgColor = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [

@@ -44,6 +44,16 @@ class AppAssets {
   static const String teaAppreGrid3 = '$_teaApprePath/tea_appre_grid3.png';
   static const String teaAppreGrid4 = '$_teaApprePath/tea_appre_grid4.png';
 
+  /// 茶叶种类相关图片
+  static const String _teaSpeciesPath = '$_imagesPath/tea_species';
+
+  static const String greenTea = '$_teaSpeciesPath/green_tea.png';
+  static const String redTea = '$_teaSpeciesPath/red_tea.png';
+  static const String yellowTea = '$_teaSpeciesPath/yellow_tea.png';
+  static const String whiteTea = '$_teaSpeciesPath/white_tea.png';
+  static const String blackTea = '$_teaSpeciesPath/black_tea.png';
+  static const String oolongTea = '$_teaSpeciesPath/oolong_tea.png';
+
   /// 导航栏相关图片
   static const String _navPath = '$_imagesPath/nav';
 

@@ -3,6 +3,7 @@ import 'package:whispers_of_tea/addons/swiper.dart';
 import 'package:whispers_of_tea/constant/app_assets.dart';
 import 'package:whispers_of_tea/constant/app_style.dart';
 import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 import 'package:whispers_of_tea/widgets/navigation.dart';
 
@@ -25,13 +26,7 @@ class _TeaApprePageState extends State<TeaApprePage> {
       appBar: const MyAppBar(title: '茶语鉴赏', leadingText: '主页面'),
       body: Stack(
         children: [
-          _getBackground(),
-          Positioned(
-            bottom: -40,
-            left: 50,
-            right: 50,
-            child: Image.asset(AppAssets.navTreeImg),
-          ),
+          const GradientBackground(),
           ListView(
             children: [
               MySwiper(height: 120, dataList: swiperList),
@@ -99,18 +94,21 @@ class _TeaApprePageState extends State<TeaApprePage> {
   _getGridRecommend() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-      child: GridView.count(
-        mainAxisSpacing: 15,
-        crossAxisSpacing: 15,
-        crossAxisCount: 2,
-        shrinkWrap: true,
-        childAspectRatio: 1.5,
-        children: [
-          _getRecommendCard('西湖龙井', AppAssets.teaAppreGrid1),
-          _getRecommendCard('雁荡毛峰', AppAssets.teaAppreGrid2),
-          _getRecommendCard('敬亭绿雪', AppAssets.teaAppreGrid3),
-          _getRecommendCard('荔枝红茶', AppAssets.teaAppreGrid4),
-        ],
+      child: ScrollConfiguration(
+        behavior: ScrollConfiguration.of(context).copyWith(overscroll: false),
+        child: GridView.count(
+          mainAxisSpacing: 15,
+          crossAxisSpacing: 15,
+          crossAxisCount: 2,
+          shrinkWrap: true,
+          childAspectRatio: 1.5,
+          children: [
+            _getRecommendCard('西湖龙井', AppAssets.teaAppreGrid1),
+            _getRecommendCard('雁荡毛峰', AppAssets.teaAppreGrid2),
+            _getRecommendCard('敬亭绿雪', AppAssets.teaAppreGrid3),
+            _getRecommendCard('荔枝红茶', AppAssets.teaAppreGrid4),
+          ],
+        ),
       ),
     );
   }
@@ -137,14 +135,6 @@ class _TeaApprePageState extends State<TeaApprePage> {
         ),
         child: Text(text, style: AppStyle.teaAppreGridStyle),
       ),
-    );
-  }
-
-  _getBackground() {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      decoration: const BoxDecoration(gradient: AppTheme.teaAppreBgColor),
     );
   }
 }

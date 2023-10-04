@@ -70,6 +70,7 @@ flutter:
     - assets/images/poetry_card/
     - assets/images/make_tea_step/
     - assets/images/tea_appreciation/
+    - assets/images/tea_species/
     - assets/images/nav/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
