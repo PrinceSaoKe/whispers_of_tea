@@ -44,6 +44,15 @@ class AppAssets {
   static const String teaAppreGrid3 = '$_teaApprePath/tea_appre_grid3.png';
   static const String teaAppreGrid4 = '$_teaApprePath/tea_appre_grid4.png';
 
+  /// 导航栏相关图片
+  static const String _navPath = '$_imagesPath/nav';
+
+  static const String navLiShi = '$_navPath/lishi.png';
+  static const String navZhongLei = '$_navPath/zhonglei.png';
+  static const String navGongYi = '$_navPath/gongyi.png';
+  static const String navXiSu = '$_navPath/xisu.png';
+  static const String navGuShi = '$_navPath/gushi.png';
+
   /// 引导页相关图片
   static const String _introductionAnimationPath =
       '$_imagesPath/introduction_animation';

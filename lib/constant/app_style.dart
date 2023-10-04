@@ -89,4 +89,10 @@ class AppStyle {
     fontFamily: _huangYouFont,
     color: AppTheme.subSwiperBgColor,
   );
+
+  static const navIconLabelStyle = TextStyle(
+    fontSize: 16,
+    fontFamily: _jinShanCloudFont,
+    color: AppTheme.navIconLabelColor,
+  );
 }
