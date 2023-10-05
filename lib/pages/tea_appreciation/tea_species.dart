@@ -14,22 +14,32 @@ class TeaSpeciesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(title: '种类分布'),
       body: Stack(
         children: [
           const GradientBackground(),
-          GridView.count(
-            crossAxisCount: 2,
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-            mainAxisSpacing: 10,
-            children: [
-              _getTeaCard('绿茶', AppAssets.greenTea, 0),
-              _getTeaCard('红茶', AppAssets.redTea, 1),
-              _getTeaCard('黄茶', AppAssets.yellowTea, 2),
-              _getTeaCard('白茶', AppAssets.whiteTea, 3),
-              _getTeaCard('黑茶', AppAssets.blackTea, 4),
-              _getTeaCard('乌龙茶', AppAssets.oolongTea, 5),
-            ],
+          ScrollConfiguration(
+            behavior:
+                ScrollConfiguration.of(context).copyWith(overscroll: false),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                const MyAppBar(title: '种类分布'),
+                GridView.count(
+                  crossAxisCount: 2,
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  mainAxisSpacing: 10,
+                  shrinkWrap: true,
+                  children: [
+                    _getTeaCard('绿茶', AppAssets.greenTea, 0),
+                    _getTeaCard('红茶', AppAssets.redTea, 1),
+                    _getTeaCard('黄茶', AppAssets.yellowTea, 2),
+                    _getTeaCard('白茶', AppAssets.whiteTea, 3),
+                    _getTeaCard('黑茶', AppAssets.blackTea, 4),
+                    _getTeaCard('乌龙茶', AppAssets.oolongTea, 5),
+                  ],
+                ),
+              ],
+            ),
           ),
           const Positioned(bottom: 0, child: Navigation()),
         ],

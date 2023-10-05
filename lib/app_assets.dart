@@ -11,6 +11,7 @@ class AppAssets {
   static const String teaImg = '$_imagesPath/tea.png';
   static const String leadingImg = '$_imagesPath/leading.png';
   static const String navTreeImg = '$_imagesPath/nav_tree.png';
+  static const String teaIntroBg = '$_imagesPath/image_bg.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';
@@ -31,7 +32,8 @@ class AppAssets {
   static const String _brewTeaStepPath = '$_imagesPath/brew_tea_step';
 
   static const String brewTeaStepBg = '$_brewTeaStepPath/brew_tea_step_bg.png';
-  static const String brewTeaStepBorder = '$_brewTeaStepPath/brew_tea_step_border.png';
+  static const String brewTeaStepBorder =
+      '$_brewTeaStepPath/brew_tea_step_border.png';
 
   /// 茶叶鉴赏相关图片
   static const String _teaApprePath = '$_imagesPath/tea_appreciation';

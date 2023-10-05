@@ -43,6 +43,11 @@ class AppTheme {
 
   /// TeaInfo主题色
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);
+  static const Color redTeaThemeColor = Color(0xFF832817);
+  static const Color yellowTeaThemeColor = Color(0xFFEFCF7B);
+  static const Color whiteTeaThemeColor = Color(0xFFDADADA);
+  static const Color blackTeaThemeColor = Color(0xFF303030);
+  static const Color oolongTeaThemeColor = Color(0xFF007219);
 
   /// 渐变色
   static const LinearGradient makeTeaCircleColor = LinearGradient(

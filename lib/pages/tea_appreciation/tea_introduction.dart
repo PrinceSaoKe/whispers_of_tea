@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/constant/tea_info.dart';
-import 'package:whispers_of_tea/widgets/gradient_background.dart';
+import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 
 class TeaIntroductionPage extends StatefulWidget {
@@ -24,11 +23,20 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: teaInfo.name),
       body: Stack(
         children: [
-          const GradientBackground(),
-          _getHead(),
+          const ImageBackground(),
+          ScrollConfiguration(
+            behavior:
+                ScrollConfiguration.of(context).copyWith(overscroll: false),
+            child: ListView(
+              children: [
+                MyAppBar(
+                    title: teaInfo.name, backgroundColor: Colors.transparent),
+                _getHead(),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -41,7 +49,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(width: 1, color: AppTheme.teaInfoHeadBorderColor),
+          border: Border.all(width: 1, color: teaInfo.color),
         ),
         child: Row(
           children: [
@@ -51,7 +59,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
                 height: double.infinity,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppTheme.greenTeaThemeColor,
+                  color: teaInfo.color,
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Text(teaInfo.name),

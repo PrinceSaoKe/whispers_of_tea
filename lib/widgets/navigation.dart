@@ -7,7 +7,9 @@ import 'package:whispers_of_tea/widgets/nav_icon.dart';
 
 /// 导航栏
 class Navigation extends StatelessWidget {
-  const Navigation({super.key});
+  const Navigation({super.key, this.needBgImg = true});
+
+  final bool needBgImg;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class Navigation extends StatelessWidget {
       child: Stack(
         children: [
           _getCircleBackground(),
-          _getImageBackground(),
+          needBgImg ? _getImageBackground() : const SizedBox(),
           const Positioned(
             left: 10,
             bottom: 15,

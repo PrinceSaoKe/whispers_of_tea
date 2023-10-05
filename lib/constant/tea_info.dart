@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:whispers_of_tea/app_theme.dart';
+
 class TeaInfo {
   TeaInfo({
     required this.name,
@@ -10,6 +13,7 @@ class TeaInfo {
     required this.teaWaterRatio,
     required this.time,
     required this.note,
+    required this.color,
   });
 
   String name;
@@ -22,6 +26,7 @@ class TeaInfo {
   String teaWaterRatio;
   String time;
   String note;
+  Color color;
 
   static List<TeaInfo> teaInfoList = [
     TeaInfo(
@@ -38,6 +43,7 @@ class TeaInfo {
       time:
           '第一泡只需浸泡30秒到60秒左右，当茶汤剩余1/3时再注水，第二泡的时间稍微延长，浸泡40秒到90秒；之后的泡法根据茶汤的浓度逐渐延长。',
       note: '选择玻璃杯或玻璃壶进行冲泡。一方面上好的绿茶具有较强的观赏性；另一方面，绿茶的芽叶较为嫩嫩的，使用盖碗等容器容易烫熟或烫伤茶叶。',
+      color: AppTheme.greenTeaThemeColor,
     ),
     TeaInfo(
       name: '红茶',
@@ -52,6 +58,7 @@ class TeaInfo {
       time:
           '红茶的出汤时间要快，前13泡都是约5秒出汤，从第4泡开始逐渐延长至约10秒，第810泡为约15秒，依次递增。出汤后不要盖上茶杯的盖子。',
       note: '在冲泡红茶时要注意水温不宜太低，以免无法发挥红茶独特的甜香滋味。每一泡的盖碗茶汤一定要倒干净，以保持后续茶汤的口感。',
+      color: AppTheme.redTeaThemeColor,
     ),
     TeaInfo(
       name: '黄茶',
@@ -66,6 +73,7 @@ class TeaInfo {
       time:
           '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
       note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
+      color: AppTheme.yellowTeaThemeColor,
     ),
     TeaInfo(
       name: '白茶',
@@ -80,6 +88,7 @@ class TeaInfo {
       time:
           '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
       note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
+      color: AppTheme.whiteTeaThemeColor,
     ),
     TeaInfo(
       name: '黑茶',
@@ -94,6 +103,7 @@ class TeaInfo {
       time:
           '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
       note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
+      color: AppTheme.blackTeaThemeColor,
     ),
     TeaInfo(
       name: '乌龙茶',
@@ -108,6 +118,7 @@ class TeaInfo {
       time:
           '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
       note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
+      color: AppTheme.oolongTeaThemeColor,
     ),
   ];
 }

@@ -23,17 +23,21 @@ class _TeaApprePageState extends State<TeaApprePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(title: '茶语鉴赏', leadingText: '主页面'),
       body: Stack(
         children: [
           const GradientBackground(),
-          ListView(
-            children: [
-              MySwiper(height: 120, dataList: swiperList),
-              _getSubSwiper(),
-              _getLabel('今日推荐'),
-              _getGridRecommend(),
-            ],
+          ScrollConfiguration(
+            behavior:
+                ScrollConfiguration.of(context).copyWith(overscroll: false),
+            child: ListView(
+              children: [
+                const MyAppBar(title: '茶语鉴赏', leadingText: '主页面'),
+                MySwiper(height: 120, dataList: swiperList),
+                _getSubSwiper(),
+                _getLabel('今日推荐'),
+                _getGridRecommend(),
+              ],
+            ),
           ),
           const Positioned(bottom: 0, child: Navigation()),
         ],
