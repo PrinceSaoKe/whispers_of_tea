@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/constant/tea_info.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';

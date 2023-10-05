@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/app_theme.dart';
 
 /// 渐变背景
 class GradientBackground extends StatelessWidget {

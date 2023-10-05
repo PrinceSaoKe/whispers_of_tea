@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/app_theme.dart';
 
 class AppStyle {
   AppStyle._();
@@ -18,6 +18,7 @@ class AppStyle {
   static const double _saveBtnTextSize = 20;
   static const double _makeTeaTitleSize = 48;
   static const double _brewTeaTitleSize = 48;
+
   /// TextStyle
   static const poetryTitleStyle = TextStyle(
     fontSize: _poetryTitleTextSize,

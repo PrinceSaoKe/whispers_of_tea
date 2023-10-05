@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_router.dart';
-import 'package:whispers_of_tea/constant/app_assets.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/nav_icon.dart';
 
 /// 导航栏

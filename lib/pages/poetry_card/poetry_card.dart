@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:whispers_of_tea/constant/app_assets.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/app_assets.dart';
+import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/constant/poetry.dart';
 import 'package:whispers_of_tea/widgets/message_dialog.dart';
 import 'package:whispers_of_tea/widgets/save_button.dart';
 
-import '../../constant/app_style.dart';
+import '../../app_style.dart';
 
 class PoetryCardPage extends StatefulWidget {
   const PoetryCardPage({super.key});

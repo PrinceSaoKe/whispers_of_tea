@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/addons/swiper.dart';
-import 'package:whispers_of_tea/constant/app_assets.dart';
-import 'package:whispers_of_tea/constant/app_style.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
+import 'package:whispers_of_tea/app_assets.dart';
+import 'package:whispers_of_tea/app_style.dart';
+import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 import 'package:whispers_of_tea/widgets/navigation.dart';

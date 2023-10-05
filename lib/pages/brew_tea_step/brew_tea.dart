@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whispers_of_tea/constant/app_assets.dart';
-import 'package:whispers_of_tea/constant/app_style.dart';
+import 'package:whispers_of_tea/app_assets.dart';
+import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/constant/brew_tea_step.dart';
 
 class BrewTeaPage extends StatefulWidget {
