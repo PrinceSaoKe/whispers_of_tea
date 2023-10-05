@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/constant/app_assets.dart';
 import 'package:whispers_of_tea/constant/app_style.dart';
-import 'package:whispers_of_tea/constant/app_theme.dart';
-import 'package:whispers_of_tea/constant/make_tea_step.dart';
-
-import '../../constant/brew_tea_step.dart';
+import 'package:whispers_of_tea/constant/brew_tea_step.dart';
 
 class BrewTeaPage extends StatefulWidget {
   const BrewTeaPage({super.key});
@@ -52,7 +49,7 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
                 children: [
                   const SizedBox(height: 40),
                   _getTitle(),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10),
                   _getContentRect(),
                 ],
               ),
@@ -99,7 +96,7 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
           fit: BoxFit.fill,
         ),
       ),
-      child: Text(content, style: AppStyle.brewTeaTextStyle)
+      child: Text(content, style: AppStyle.brewTeaTextStyle),
     );
   }
 }
