@@ -6,6 +6,11 @@ import 'package:whispers_of_tea/pages/poetry_card/poetry_card.dart';
 import 'package:whispers_of_tea/pages/tea_appreciation/tea_appreciation.dart';
 import 'package:whispers_of_tea/pages/tea_appreciation/tea_introduction.dart';
 import 'package:whispers_of_tea/pages/tea_appreciation/tea_species.dart';
+import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_attention.dart';
+import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_basic_manner.dart';
+import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_culture_etiquette.dart';
+import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_etiquette.dart';
+import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_rules.dart';
 
 class AppRouter {
   AppRouter._();
@@ -20,6 +25,11 @@ class AppRouter {
   static const String poetryCard = '/poetryCard';
   static const String makeTea = '/makeTea';
   static const String brewTea = '/brewTea';
+  static const String teaCultureEtiquette = '/teaCultureEtiquette';
+  static const String teaBasicManner = '/teaCultureEtiquette/teaBasicManner';
+  static const String teaRules = '/teaCultureEtiquette/teaRules';
+  static const String teaEtiquette = '/teaCultureEtiquette/teaEtiquette';
+  static const String teaAttention = '/teaCultureEtiquette/teaAttention';
 
   /// 所有路由
   static final List<GetPage> router = [
@@ -30,5 +40,10 @@ class AppRouter {
     GetPage(name: poetryCard, page: () => const PoetryCardPage()),
     GetPage(name: makeTea, page: () => const MakeTeaPage()),
     GetPage(name: brewTea, page: () => const BrewTeaPage()),
+    GetPage(name: teaCultureEtiquette, page: () => const TeaCultureEqi()),
+    GetPage(name: teaBasicManner, page: () => const TeaBasicManner()),
+    GetPage(name: teaRules, page: () => const TeaRules()),
+    GetPage(name: teaEtiquette, page: () => const TeaEtiquette()),
+    GetPage(name: teaAttention, page: () => const TeaAttention()),
   ];
 }
