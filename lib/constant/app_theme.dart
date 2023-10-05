@@ -31,6 +31,8 @@ class AppTheme {
   static const Color makeTeaBgColor = Color(0x8288B399);
   static const Color makeTeaTitleColor = Color(0xFF1A6337);
   static const Color makeTeaTextColor = Color(0xFF094F00);
+  static const Color brewTeaTitleColor = Color(0xFF002B11);
+  static const Color brewTeaTextColor = Color(0xFF000000);
   static const Color leadingTextColor = Color(0xFF547A64);
   static const Color subSwiperBgColor = Color(0xFF094F00);
   static const Color appBarBgColor = Color.fromRGBO(104, 166, 113, 0.44);

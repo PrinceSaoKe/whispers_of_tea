@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:whispers_of_tea/pages/brew_tea_step/brew_tea.dart';
 import 'package:whispers_of_tea/pages/home_page.dart';
 import 'package:whispers_of_tea/pages/make_tea_step/make_tea.dart';
 import 'package:whispers_of_tea/pages/poetry_card/poetry_card.dart';
@@ -18,6 +19,7 @@ class AppRouter {
       '/teaAppreciation/teaSpecies/teaIntroduction';
   static const String poetryCard = '/poetryCard';
   static const String makeTea = '/makeTea';
+  static const String brewTea = '/brewTea';
 
   /// 所有路由
   static final List<GetPage> router = [
@@ -27,5 +29,6 @@ class AppRouter {
     GetPage(name: teaIntroduction, page: () => const TeaIntroductionPage()),
     GetPage(name: poetryCard, page: () => const PoetryCardPage()),
     GetPage(name: makeTea, page: () => const MakeTeaPage()),
+    GetPage(name: brewTea, page: () => const BrewTeaPage()),
   ];
 }

@@ -5,8 +5,8 @@ class AppStyle {
   AppStyle._();
 
   // fontFamily
-  static const String _huangYouFont = 'HuangYou';
-  static const String _jinShanCloudFont = 'JinShanCloud';
+  static const String _huangYouFont = 'ZhanKuQingKeHuangYouTi';
+  static const String _jinShanCloudFont = 'KingsoftCloudFont';
 
   /// Padding & Margin
   static const double paddingLR = 15;
@@ -17,7 +17,7 @@ class AppStyle {
   static const double _poetryTextSize = 24;
   static const double _saveBtnTextSize = 20;
   static const double _makeTeaTitleSize = 48;
-
+  static const double _brewTeaTitleSize = 48;
   /// TextStyle
   static const poetryTitleStyle = TextStyle(
     fontSize: _poetryTitleTextSize,
@@ -33,6 +33,12 @@ class AppStyle {
   static const makeTeaTitleStyle = TextStyle(
     fontSize: _makeTeaTitleSize,
     color: AppTheme.makeTeaTitleColor,
+    fontFamily: _huangYouFont,
+  );
+
+  static const brewTeaTitleStyle = TextStyle(
+    fontSize: _brewTeaTitleSize,
+    color: AppTheme.brewTeaTitleColor,
     fontFamily: _huangYouFont,
   );
 
@@ -52,6 +58,12 @@ class AppStyle {
     fontFamily: _jinShanCloudFont,
     color: Colors.white,
     height: 1.6,
+  );
+
+  static const brewTeaTextStyle = TextStyle(
+    fontSize: 24,
+    fontFamily: _jinShanCloudFont,
+    color: AppTheme.brewTeaTextColor,
   );
 
   static const leadingTextStyle = TextStyle(

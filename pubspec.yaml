@@ -67,11 +67,16 @@ flutter:
     - assets/fonts/
     - assets/icons/
     - assets/images/
-    - assets/images/poetry_card/
+    - assets/images/brew_tea_step/
+    - assets/images/brew_tea_step/brew_tea_step_border.png
+    - assets/images/leading.png
     - assets/images/make_tea_step/
     - assets/images/tea_appreciation/
     - assets/images/tea_species/
     - assets/images/nav/
+    - assets/images/nav_tree.png
+    - assets/images/poetry_card/
+    - assets/images/tea_appreciation/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -84,14 +89,12 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: HuangYou
-      fonts:
-        - asset: assets/fonts/ZhanKuQingKeHuangYouTi.ttf
-        # - asset: fonts/Schyler-Italic.ttf
-        #   style: italic
-    - family: JinShanCloud
+    - family: KingsoftCloudFont
       fonts:
         - asset: assets/fonts/KingsoftCloudFont.ttf
+    - family: ZhanKuQingKeHuangYouTi
+      fonts:
+        - asset: assets/fonts/ZhanKuQingKeHuangYouTi.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
