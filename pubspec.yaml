@@ -71,6 +71,8 @@ flutter:
     - assets/images/brew_tea_step/brew_tea_step_border.png
     - assets/images/leading.png
     - assets/images/make_tea_step/
+    - assets/images/tea_appreciation/
+    - assets/images/tea_species/
     - assets/images/nav/
     - assets/images/nav_tree.png
     - assets/images/poetry_card/

@@ -107,4 +107,10 @@ class AppStyle {
     fontFamily: _jinShanCloudFont,
     color: AppTheme.navIconLabelColor,
   );
+
+  static const teaSpeciesLabelStyle = TextStyle(
+    fontSize: 18,
+    // fontFamily: _jinShanCloudFont,
+    color: Colors.black,
+  );
 }

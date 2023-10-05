@@ -11,13 +11,16 @@ class MySwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
-      child: Swiper(
-        itemCount: dataList.length,
-        viewportFraction: 0.8,
-        loop: false,
-        itemBuilder: (context, index) {
-          return dataList[index];
-        },
+      child: ScrollConfiguration(
+        behavior: ScrollConfiguration.of(context).copyWith(overscroll: false),
+        child: Swiper(
+          itemCount: dataList.length,
+          viewportFraction: 0.8,
+          loop: false,
+          itemBuilder: (context, index) {
+            return dataList[index];
+          },
+        ),
       ),
     );
   }
