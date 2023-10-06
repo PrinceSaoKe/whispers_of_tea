@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/constant/tea_info.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
@@ -53,29 +54,54 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
         ),
         child: Row(
           children: [
+            Container(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              height: double.infinity,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: teaInfo.color,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(teaInfo.name, style: AppStyle.teaIntroNameStyle),
+            ),
             Expanded(
               flex: 1,
-              child: Container(
-                height: double.infinity,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: teaInfo.color,
-                  borderRadius: BorderRadius.circular(14),
+              child: Center(
+                child: Text(
+                  '${teaInfo.temperature}℃',
+                  style: AppStyle.teaIntroTemperaStyle,
                 ),
-                child: Text(teaInfo.name),
               ),
             ),
-            Expanded(flex: 1, child: Text('${teaInfo.temperature}℃')),
             Expanded(
               flex: 1,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('茶|${teaInfo.teaWeight}g'),
-                  Text('水|${teaInfo.waterVolume}ml'),
+                  Text(
+                    '茶|${teaInfo.teaWeight}g',
+                    style: AppStyle.teaIntroWeightStyle,
+                  ),
+                  Text(
+                    '水|${teaInfo.waterVolume}ml',
+                    style: AppStyle.teaIntroWeightStyle,
+                  ),
                 ],
               ),
             ),
-            Expanded(flex: 1, child: Text(teaInfo.warmOrCold)),
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: Text(
+                  teaInfo.warmOrCold,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: AppStyle.siYuanHeiTiFont,
+                    color: teaInfo.color,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -5,9 +5,9 @@ class AppStyle {
   AppStyle._();
 
   // fontFamily
-  static const String _huangYouFont = 'ZhanKuQingKeHuangYouTi';
-  static const String _siYuanHeiTiFont = 'SiYuanHeiTi';
-  static const String _jinShanCloudFont = 'KingsoftCloudFont';
+  static const String huangYouFont = 'ZhanKuQingKeHuangYouTi';
+  static const String siYuanHeiTiFont = 'SiYuanHeiTi';
+  static const String jinShanCloudFont = 'KingsoftCloudFont';
 
   /// Padding & Margin
   static const double paddingLR = 15;
@@ -23,25 +23,25 @@ class AppStyle {
   /// TextStyle
   static const poetryTitleStyle = TextStyle(
     fontSize: _poetryTitleTextSize,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: AppTheme.poetryColor,
   );
   static const poetryStyle = TextStyle(
     fontSize: _poetryTextSize,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: AppTheme.poetryColor,
     height: 1.4,
   );
   static const makeTeaTitleStyle = TextStyle(
     fontSize: _makeTeaTitleSize,
     color: AppTheme.makeTeaTitleColor,
-    fontFamily: _huangYouFont,
+    fontFamily: huangYouFont,
   );
 
   static const brewTeaTitleStyle = TextStyle(
     fontSize: _brewTeaTitleSize,
     color: AppTheme.brewTeaTitleColor,
-    fontFamily: _huangYouFont,
+    fontFamily: huangYouFont,
   );
 
   static const poetryBtnStyle = TextStyle(
@@ -51,69 +51,85 @@ class AppStyle {
 
   static const makeTeaTextStyle = TextStyle(
     fontSize: 20,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: AppTheme.makeTeaTextColor,
   );
 
   static const makeTeaFinishStyle = TextStyle(
     fontSize: 33,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: Colors.white,
     height: 1.6,
   );
 
   static const brewTeaTextStyle = TextStyle(
     fontSize: 24,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: AppTheme.brewTeaTextColor,
   );
 
   static const leadingTextStyle = TextStyle(
     fontSize: 12,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: AppTheme.leadingTextColor,
   );
 
   static const appBarTitleStyle = TextStyle(
     fontSize: 24,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: Colors.black,
   );
 
   static const subSwiperLeftStyle = TextStyle(
     fontSize: 30,
-    fontFamily: _huangYouFont,
+    fontFamily: huangYouFont,
     color: Colors.white,
   );
 
   static const subSwiperRightStyle = TextStyle(
     fontSize: 20,
-    fontFamily: _huangYouFont,
+    fontFamily: huangYouFont,
     color: Colors.white,
   );
 
   static const teaAppreLabelStyle = TextStyle(
     fontSize: 20,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: Colors.black,
   );
 
   static const teaAppreGridStyle = TextStyle(
     fontSize: 14,
-    fontFamily: _huangYouFont,
+    fontFamily: huangYouFont,
     color: AppTheme.subSwiperBgColor,
   );
 
   static const navIconLabelStyle = TextStyle(
     fontSize: 16,
-    fontFamily: _jinShanCloudFont,
+    fontFamily: jinShanCloudFont,
     color: AppTheme.navIconLabelColor,
   );
 
   static const teaSpeciesLabelStyle = TextStyle(
     fontSize: 18,
-    fontFamily: _siYuanHeiTiFont,
+    fontFamily: siYuanHeiTiFont,
     color: Colors.black,
     fontWeight: FontWeight.bold,
+  );
+
+  static const teaIntroNameStyle = TextStyle(
+    fontSize: 24,
+    fontFamily: siYuanHeiTiFont,
+    color: Colors.white,
+  );
+
+  static const teaIntroTemperaStyle = TextStyle(
+    fontSize: 18,
+    fontFamily: siYuanHeiTiFont,
+  );
+
+  static const teaIntroWeightStyle = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
   );
 }
