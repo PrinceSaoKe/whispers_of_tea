@@ -57,6 +57,9 @@ class AppAssets {
   static const String blackTea = '$_teaSpeciesPath/black_tea.png';
   static const String oolongTea = '$_teaSpeciesPath/oolong_tea.png';
 
+  static const String teaIntroDeco1 = '$_teaSpeciesPath/tea_intro_deco_1.png';
+  static const String teaIntroDeco2 = '$_teaSpeciesPath/tea_intro_deco_2.png';
+
   /// 导航栏相关图片
   static const String _navPath = '$_imagesPath/nav';
 
@@ -81,14 +84,21 @@ class AppAssets {
 
   /// 饮茶文化习俗首页导航图
   static const String _teaCultureNavPath = '$_imagesPath/tea_culture_etiquette';
-  static const String teaCultureNavImage1 = '$_teaCultureNavPath/tea_culture_nav1.png';
-  static const String teaCultureNavImage2 = '$_teaCultureNavPath/tea_culture_nav2.png';
-  static const String teaCultureNavImage3 = '$_teaCultureNavPath/tea_culture_nav3.png';
-  static const String teaCultureNavImage4 = '$_teaCultureNavPath/tea_culture_nav4.png';
+  static const String teaCultureNavImage1 =
+      '$_teaCultureNavPath/tea_culture_nav1.png';
+  static const String teaCultureNavImage2 =
+      '$_teaCultureNavPath/tea_culture_nav2.png';
+  static const String teaCultureNavImage3 =
+      '$_teaCultureNavPath/tea_culture_nav3.png';
+  static const String teaCultureNavImage4 =
+      '$_teaCultureNavPath/tea_culture_nav4.png';
 
   ///饮茶文化习俗的四个页面首图
-  static const String teaBasicMannerImage = '$_teaCultureNavPath/basic_manner.png';
+  static const String teaBasicMannerImage =
+      '$_teaCultureNavPath/basic_manner.png';
   static const String teaRulesImage = '$_teaCultureNavPath/tea_rules.png';
-  static const String teaEtiquetteImage = '$_teaCultureNavPath/tea_etiquette.png';
-  static const String teaAttentionImage = '$_teaCultureNavPath/tea_attention.png';
+  static const String teaEtiquetteImage =
+      '$_teaCultureNavPath/tea_etiquette.png';
+  static const String teaAttentionImage =
+      '$_teaCultureNavPath/tea_attention.png';
 }

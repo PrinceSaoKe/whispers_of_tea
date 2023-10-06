@@ -132,4 +132,22 @@ class AppStyle {
     fontSize: 14,
     fontFamily: siYuanHeiTiFont,
   );
+
+  static const teaIntroDescStyle = TextStyle(
+    fontSize: 16,
+    fontFamily: siYuanHeiTiFont,
+  );
+
+  static const teaIntroLabelStyle = TextStyle(
+    fontSize: 16,
+    fontFamily: siYuanHeiTiFont,
+    fontWeight: FontWeight.bold,
+    height: 2,
+  );
+
+  static const teaIntroTextStyle = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+    height: 2,
+  );
 }

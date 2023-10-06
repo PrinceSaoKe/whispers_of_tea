@@ -31,10 +31,21 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
             behavior:
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
+              padding: const EdgeInsets.only(bottom: 20),
               children: [
                 MyAppBar(
                     title: teaInfo.name, backgroundColor: Colors.transparent),
                 _getHead(),
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  child: Text(
+                    teaInfo.introduction,
+                    style: AppStyle.teaIntroDescStyle,
+                  ),
+                ),
+                _getContainer1(),
+                _getContainer2(),
               ],
             ),
           ),
@@ -45,7 +56,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
 
   _getHead() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: Container(
         height: 60,
         decoration: BoxDecoration(
@@ -79,11 +90,11 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '茶|${teaInfo.teaWeight}g',
+                    '茶 | ${teaInfo.teaWeight} g',
                     style: AppStyle.teaIntroWeightStyle,
                   ),
                   Text(
-                    '水|${teaInfo.waterVolume}ml',
+                    '水 | ${teaInfo.waterVolume} ml',
                     style: AppStyle.teaIntroWeightStyle,
                   ),
                 ],
@@ -102,6 +113,54 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _getContainer1() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+      child: Container(
+        margin: const EdgeInsets.only(top: 15),
+        padding: const EdgeInsets.fromLTRB(15, 10, 15, 15),
+        decoration: BoxDecoration(
+          border: Border.all(width: 1, color: teaInfo.color),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('冲泡需要注意水温和冲泡方法：', style: AppStyle.teaIntroLabelStyle),
+            Text(teaInfo.makeTeaMethod, style: AppStyle.teaIntroTextStyle),
+            const SizedBox(height: 5),
+            const Text('茶叶的冲泡比例：', style: AppStyle.teaIntroLabelStyle),
+            Text(teaInfo.teaWaterRatio, style: AppStyle.teaIntroTextStyle),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _getContainer2() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+      child: Container(
+        margin: const EdgeInsets.only(top: 15),
+        padding: const EdgeInsets.fromLTRB(15, 10, 15, 15),
+        decoration: BoxDecoration(
+          border: Border.all(width: 1, color: teaInfo.color),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('出汤时间：', style: AppStyle.teaIntroLabelStyle),
+            Text(teaInfo.time, style: AppStyle.teaIntroTextStyle),
+            const SizedBox(height: 5),
+            const Text('冲泡注意事项：', style: AppStyle.teaIntroLabelStyle),
+            Text(teaInfo.note, style: AppStyle.teaIntroTextStyle),
           ],
         ),
       ),

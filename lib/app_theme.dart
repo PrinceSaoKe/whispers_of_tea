@@ -9,7 +9,8 @@ class AppTheme {
   static const MaterialColor themeColor = MaterialColor(
     _themeColorValue,
     <int, Color>{
-      50: Color(0xFFFF0000),
+      // 50: Color(0xFFFF0000),
+      50: Color.fromRGBO(188, 228, 205, 1),
       100: Color(0xFFFF0080),
       200: Color(0xFFFF00FF),
       300: Color(0xFF8000FF),
@@ -45,7 +46,7 @@ class AppTheme {
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);
   static const Color redTeaThemeColor = Color(0xFF832817);
   static const Color yellowTeaThemeColor = Color(0xFFEFCF7B);
-  static const Color whiteTeaThemeColor = Color(0xFFDADADA);
+  static const Color whiteTeaThemeColor = Color.fromARGB(255, 174, 174, 174);
   static const Color blackTeaThemeColor = Color(0xFF303030);
   static const Color oolongTeaThemeColor = Color(0xFF007219);
 
