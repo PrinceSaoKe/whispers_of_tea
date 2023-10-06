@@ -6,6 +6,7 @@ class AppStyle {
 
   // fontFamily
   static const String _huangYouFont = 'ZhanKuQingKeHuangYouTi';
+  static const String _siYuanHeiTiFont = 'SiYuanHeiTi';
   static const String _jinShanCloudFont = 'KingsoftCloudFont';
 
   /// Padding & Margin
@@ -111,7 +112,8 @@ class AppStyle {
 
   static const teaSpeciesLabelStyle = TextStyle(
     fontSize: 18,
-    // fontFamily: _jinShanCloudFont,
+    fontFamily: _siYuanHeiTiFont,
     color: Colors.black,
+    fontWeight: FontWeight.bold,
   );
 }

@@ -92,6 +92,9 @@ flutter:
     - family: KingsoftCloudFont
       fonts:
         - asset: assets/fonts/KingsoftCloudFont.ttf
+    - family: SiYuanHeiTi
+      fonts:
+        - asset: assets/fonts/SiYuanHeiTi.otf
     - family: ZhanKuQingKeHuangYouTi
       fonts:
         - asset: assets/fonts/ZhanKuQingKeHuangYouTi.ttf
