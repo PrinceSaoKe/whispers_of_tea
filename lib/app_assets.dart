@@ -78,4 +78,17 @@ class AppAssets {
   static const String moodDairyImage =
       '$_introductionAnimationPath/mood_dairy_image.png';
   static const String welcomeImage = '$_introductionAnimationPath/welcome.png';
+
+  /// 饮茶文化习俗首页导航图
+  static const String _teaCultureNavPath = '$_imagesPath/tea_culture_etiquette';
+  static const String teaCultureNavImage1 = '$_teaCultureNavPath/tea_culture_nav1.png';
+  static const String teaCultureNavImage2 = '$_teaCultureNavPath/tea_culture_nav2.png';
+  static const String teaCultureNavImage3 = '$_teaCultureNavPath/tea_culture_nav3.png';
+  static const String teaCultureNavImage4 = '$_teaCultureNavPath/tea_culture_nav4.png';
+
+  ///饮茶文化习俗的四个页面首图
+  static const String teaBasicMannerImage = '$_teaCultureNavPath/basic_manner.png';
+  static const String teaRulesImage = '$_teaCultureNavPath/tea_rules.png';
+  static const String teaEtiquetteImage = '$_teaCultureNavPath/tea_etiquette.png';
+  static const String teaAttentionImage = '$_teaCultureNavPath/tea_attention.png';
 }

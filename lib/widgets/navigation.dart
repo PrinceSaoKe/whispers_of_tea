@@ -46,10 +46,15 @@ class Navigation extends StatelessWidget {
               radius: 32,
             ),
           ),
-          const Positioned(
+          Positioned(
             right: 70,
             bottom: 70,
-            child: NavigationIcon(label: '习俗', imagePath: AppAssets.navXiSu),
+            child: NavigationIcon(
+              label: '习俗', imagePath: AppAssets.navXiSu,
+              onTap: () {
+                Get.toNamed(AppRouter.teaCultureEtiquette);
+              },
+            ),
           ),
           const Positioned(
             right: 10,
