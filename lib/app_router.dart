@@ -13,7 +13,6 @@ import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_basic_manner.dar
 import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_culture_etiquette.dart';
 import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_etiquette.dart';
 import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_rules.dart';
-import 'package:whispers_of_tea/pages/tea_story/TeaStory.dart';
 
 class AppRouter {
   AppRouter._();
@@ -35,7 +34,6 @@ class AppRouter {
   static const String teaRules = '/teaCultureEtiquette/teaRules';
   static const String teaEtiquette = '/teaCultureEtiquette/teaEtiquette';
   static const String teaAttention = '/teaCultureEtiquette/teaAttention';
-  static const String teaStory = '/teaStory';
 
   /// 所有路由
   static final List<GetPage> router = [
@@ -53,6 +51,5 @@ class AppRouter {
     GetPage(name: teaRules, page: () => const TeaRules()),
     GetPage(name: teaEtiquette, page: () => const TeaEtiquette()),
     GetPage(name: teaAttention, page: () => const TeaAttention()),
-    GetPage(name: teaStory, page: () => const TeaStory()),
   ];
 }

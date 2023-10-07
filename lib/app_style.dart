@@ -206,6 +206,5 @@ class AppStyle {
     fontSize: 16,
     fontFamily: siYuanHeiTiFont,
     color: AppTheme.etiquetteTextColor,
-    height: 1.6
   );
 }

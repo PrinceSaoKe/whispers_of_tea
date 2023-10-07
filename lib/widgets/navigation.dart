@@ -88,6 +88,7 @@ class Navigation extends StatelessWidget {
         width: 500,
         height: 500,
         decoration: BoxDecoration(
+          boxShadow: const [BoxShadow(blurRadius: 7)],
           color: AppTheme.navCircleBgColor,
           borderRadius: BorderRadius.circular(250),
         ),
