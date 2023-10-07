@@ -16,9 +16,6 @@ class TeaAttention extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        title: "注意事项",
-      ),
       body: Stack(
         children: [
           const GradientBackground(),
@@ -28,6 +25,9 @@ class TeaAttention extends StatelessWidget {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: [
+                MyAppBar(
+                  title: "注意事项",
+                ),
                 const ImageTop(imgPath: AppAssets.teaAttentionImage),
                 const DividerOfEtiquette(),
                 for (int i = 0; i < 3; i++) _getTextContainer(i)

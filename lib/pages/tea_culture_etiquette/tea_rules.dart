@@ -15,9 +15,6 @@ class TeaRules extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        title: "茶道法则",
-      ),
       body: Stack(
         children: [
           const GradientBackground(),
@@ -27,6 +24,9 @@ class TeaRules extends StatelessWidget {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: [
+                MyAppBar(
+                  title: "饮茶礼仪",
+                ),
                 const ImageTop(imgPath: AppAssets.teaRulesImage),
                 const DividerOfEtiquette(),
                 _getTextContainer()

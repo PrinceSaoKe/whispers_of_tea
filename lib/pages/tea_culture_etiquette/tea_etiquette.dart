@@ -14,9 +14,6 @@ class TeaEtiquette extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        title: "饮茶礼仪",
-      ),
       body: Stack(
         children: [
           const ImageBackground(),
@@ -25,6 +22,9 @@ class TeaEtiquette extends StatelessWidget {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: [
+                MyAppBar(
+                  title: "饮茶礼仪",
+                ),
                 const ImageTop(imgPath: AppAssets.teaEtiquetteImage),
                 for (int i = 0; i < 4; i++) _getEtiquetteCard(i),
               ],
