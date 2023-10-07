@@ -150,4 +150,25 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     height: 2,
   );
+
+  static const basicMannerItemTitle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    fontFamily: siYuanHeiTiFont,
+    height: 2,
+  );
+
+  static const basicMannerItemText = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+    height: 1.5,
+    color: AppTheme.etiquetteTextColor,
+  );
+
+  static const teaRulesText = TextStyle(
+    fontSize: 16,
+    fontFamily: siYuanHeiTiFont,
+    height: 2,
+    color: AppTheme.etiquetteTextColor,
+  );
 }

@@ -95,4 +95,7 @@ class AppTheme {
 
   /// 主题
   static ThemeData themeData = ThemeData(primarySwatch: themeColor);
+
+  /// 习俗模块里的小字颜色
+  static const Color etiquetteTextColor = Color(0xFF1C3002);
 }
