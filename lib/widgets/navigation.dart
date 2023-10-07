@@ -34,7 +34,7 @@ class Navigation extends StatelessWidget {
           ),
           Positioned(
             left: 70,
-            bottom: 70,
+            bottom: 55,
             child: NavigationIcon(
               label: '种类',
               imagePath: AppAssets.navZhongLei,
@@ -45,7 +45,7 @@ class Navigation extends StatelessWidget {
           ),
           Positioned(
             left: width / 2 - 32,
-            bottom: 80,
+            bottom: 65,
             child: const NavigationIcon(
               label: '工艺',
               imagePath: AppAssets.navGongYi,
@@ -54,7 +54,7 @@ class Navigation extends StatelessWidget {
           ),
           Positioned(
             right: 70,
-            bottom: 70,
+            bottom: 55,
             child: NavigationIcon(
               label: '习俗',
               imagePath: AppAssets.navXiSu,
@@ -63,10 +63,16 @@ class Navigation extends StatelessWidget {
               },
             ),
           ),
-          const Positioned(
+          Positioned(
             right: 10,
             bottom: 15,
-            child: NavigationIcon(label: '故事', imagePath: AppAssets.navGuShi),
+            child: NavigationIcon(
+              label: '故事',
+              imagePath: AppAssets.navGuShi,
+              onTap: () {
+                Get.toNamed(AppRouter.teaStory);
+              },
+            ),
           ),
         ],
       ),
