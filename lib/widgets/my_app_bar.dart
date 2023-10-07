@@ -27,6 +27,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false, // 是否需要自动生成leading
       backgroundColor: backgroundColor,
       shadowColor: Colors.transparent,
+      elevation: 0,
       foregroundColor: Colors.black,
     );
   }
