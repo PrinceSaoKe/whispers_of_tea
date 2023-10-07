@@ -205,5 +205,7 @@ class AppStyle {
   static const teaStoryText = TextStyle(
     fontSize: 16,
     fontFamily: siYuanHeiTiFont,
+    color: AppTheme.etiquetteTextColor,
+    height: 1.6
   );
 }

@@ -56,12 +56,13 @@ class TeaEtiquette extends StatelessWidget {
                   )
                 ],
               ),
-              Container(
-                margin: const EdgeInsets.only(left: 25),
-                width: 195,
-                child: Text(
-                  TeaEtiquetteDetail.etiquetteItem[index]['text']!,
-                  style: AppStyle.teaEtiquetteText,
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.only(left: 25),
+                  child: Text(
+                    TeaEtiquetteDetail.etiquetteItem[index]['text']!,
+                    style: AppStyle.teaEtiquetteText,
+                  ),
                 ),
               )
             ],
