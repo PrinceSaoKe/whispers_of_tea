@@ -40,6 +40,8 @@ class AppTheme {
   static const Color navIconLabelColor = Color(0xFF547A64);
   static const Color navCircleBgColor = Color(0xFFD9E6C8);
   static const Color teaInfoHeadBorderColor = Color(0xFF487555);
+  static const Color teaStoryContainerBgColor =
+      Color.fromRGBO(195, 214, 169, 0.37);
 
   /// TeaInfo主题色
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);
