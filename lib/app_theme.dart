@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
 
-  static const int _themeColorValue = 0xFFFF0000;
+  static const int _themeColorValue = 0xFFBCE4CD;
 
   /// 主题颜色
   static const MaterialColor themeColor = MaterialColor(
     _themeColorValue,
     <int, Color>{
-      // 50: Color(0xFFFF0000),
-      50: Color.fromRGBO(188, 228, 205, 1),
+      50: Color(0xFFFF0000),
       100: Color(0xFFFF0080),
       200: Color(0xFFFF00FF),
       300: Color(0xFF8000FF),
@@ -48,7 +47,7 @@ class AppTheme {
   static const Color yellowTeaThemeColor = Color(0xFFEFCF7B);
   static const Color whiteTeaThemeColor = Color.fromARGB(255, 174, 174, 174);
   static const Color blackTeaThemeColor = Color(0xFF303030);
-  static const Color oolongTeaThemeColor = Color(0xFF007219);
+  static const Color oolongTeaThemeColor = Color(0xFF1CB27C);
 
   /// 渐变色
   static const LinearGradient makeTeaCircleColor = LinearGradient(
