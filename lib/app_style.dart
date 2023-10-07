@@ -150,4 +150,14 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     height: 2,
   );
+
+  static const teaHistoryTextStyle = TextStyle(
+    fontSize: 18,
+    fontFamily: siYuanHeiTiFont,
+  );
+
+  static const teaHistoryLabelStyle = TextStyle(
+    fontSize: 20,
+    fontFamily: huangYouFont,
+  );
 }

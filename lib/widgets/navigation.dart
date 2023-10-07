@@ -21,10 +21,16 @@ class Navigation extends StatelessWidget {
         children: [
           _getCircleBackground(),
           needBgImg ? _getImageBackground() : const SizedBox(),
-          const Positioned(
+          Positioned(
             left: 10,
             bottom: 15,
-            child: NavigationIcon(label: '历史', imagePath: AppAssets.navLiShi),
+            child: NavigationIcon(
+              label: '历史',
+              imagePath: AppAssets.navLiShi,
+              onTap: () {
+                Get.toNamed(AppRouter.teaHistory);
+              },
+            ),
           ),
           Positioned(
             left: 70,
@@ -50,7 +56,8 @@ class Navigation extends StatelessWidget {
             right: 70,
             bottom: 70,
             child: NavigationIcon(
-              label: '习俗', imagePath: AppAssets.navXiSu,
+              label: '习俗',
+              imagePath: AppAssets.navXiSu,
               onTap: () {
                 Get.toNamed(AppRouter.teaCultureEtiquette);
               },

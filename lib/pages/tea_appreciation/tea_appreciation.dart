@@ -32,7 +32,7 @@ class _TeaApprePageState extends State<TeaApprePage> {
             child: ListView(
               children: [
                 const MyAppBar(title: '茶语鉴赏', leadingText: '主页面'),
-                MySwiper(height: 120, dataList: swiperList),
+                DefaultSwiper(height: 120, dataList: swiperList),
                 _getSubSwiper(),
                 _getLabel('今日推荐'),
                 _getGridRecommend(),

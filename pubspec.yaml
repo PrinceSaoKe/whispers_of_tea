@@ -77,6 +77,7 @@ flutter:
     - assets/images/nav_tree.png
     - assets/images/poetry_card/
     - assets/images/tea_appreciation/
+    - assets/images/tea_history/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

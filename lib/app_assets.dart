@@ -12,6 +12,7 @@ class AppAssets {
   static const String leadingImg = '$_imagesPath/leading.png';
   static const String navTreeImg = '$_imagesPath/nav_tree.png';
   static const String teaIntroBg = '$_imagesPath/image_bg.png';
+  static const String teapotImg = '$_imagesPath/teapot.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';
@@ -68,6 +69,28 @@ class AppAssets {
   static const String navGongYi = '$_navPath/gongyi.png';
   static const String navXiSu = '$_navPath/xisu.png';
   static const String navGuShi = '$_navPath/gushi.png';
+
+  /// 茶叶历史相关图片
+  static const String _teaHistoryPath = '$_imagesPath/tea_history';
+
+  static const String historySwiper1 = '$_teaHistoryPath/history_swiper_1.png';
+  static const String historySwiper2 = '$_teaHistoryPath/history_swiper_2.png';
+  static const String historySwiper3 = '$_teaHistoryPath/history_swiper_3.png';
+  static const String historySwiper4 = '$_teaHistoryPath/history_swiper_4.png';
+  static const String historySwiper5 = '$_teaHistoryPath/history_swiper_5.png';
+  static const String historySwiper6 = '$_teaHistoryPath/history_swiper_6.png';
+  static const String historySwiper7 = '$_teaHistoryPath/history_swiper_7.png';
+  static const String historySwiper8 = '$_teaHistoryPath/history_swiper_8.png';
+  static const String historySwiper9 = '$_teaHistoryPath/history_swiper_9.png';
+
+  static const String teaHistory1 = '$_teaHistoryPath/tea_history_1.png';
+  static const String teaHistory2 = '$_teaHistoryPath/tea_history_2.png';
+  static const String teaHistory3 = '$_teaHistoryPath/tea_history_3.png';
+  static const String teaHistory4 = '$_teaHistoryPath/tea_history_4.png';
+  static const String teaHistory5 = '$_teaHistoryPath/tea_history_5.png';
+  static const String teaHistory6 = '$_teaHistoryPath/tea_history_6.png';
+  static const String teaHistory7 = '$_teaHistoryPath/tea_history_7.png';
+  static const String teaHistory8 = '$_teaHistoryPath/tea_history_8.png';
 
   /// 引导页相关图片
   static const String _introductionAnimationPath =
