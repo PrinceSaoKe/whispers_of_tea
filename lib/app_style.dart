@@ -170,6 +170,7 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     height: 2,
     color: AppTheme.etiquetteTextColor,
+  );
 
   static const teaHistoryTextStyle = TextStyle(
     fontSize: 18,
