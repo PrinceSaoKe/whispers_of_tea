@@ -181,4 +181,24 @@ class AppStyle {
     fontSize: 20,
     fontFamily: huangYouFont,
   );
+
+  static const teaAttentionText = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+    height: 1.5,
+    color: AppTheme.etiquetteTextColor,
+  );
+
+  static const teaEtiquetteTitle = TextStyle(
+    fontSize: 18,
+    fontFamily: siYuanHeiTiFont,
+    fontWeight: FontWeight.bold,
+    color: AppTheme.etiquetteTextColor,
+  );
+
+  static const teaEtiquetteText = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+    color: AppTheme.etiquetteTextColor,
+  );
 }
