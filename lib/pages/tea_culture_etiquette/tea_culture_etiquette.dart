@@ -8,6 +8,7 @@ import '../../app_assets.dart';
 import '../../app_router.dart';
 import '../../app_style.dart';
 import '../../widgets/gradient_background.dart';
+import '../../widgets/image_background.dart';
 
 
 class TeaCultureEqi extends StatelessWidget {
@@ -19,6 +20,7 @@ class TeaCultureEqi extends StatelessWidget {
       body: Stack(
         children: [
           const GradientBackground(),
+          const ImageBackground(),
           ScrollConfiguration(
             behavior:
             ScrollConfiguration.of(context).copyWith(overscroll: false),
