@@ -63,10 +63,16 @@ class Navigation extends StatelessWidget {
               },
             ),
           ),
-          const Positioned(
+          Positioned(
             right: 10,
             bottom: 15,
-            child: NavigationIcon(label: '故事', imagePath: AppAssets.navGuShi),
+            child: NavigationIcon(
+                label: '故事',
+                imagePath: AppAssets.navGuShi,
+              onTap: (){
+                Get.toNamed(AppRouter.teaStory);
+              },
+            ),
           ),
         ],
       ),

@@ -201,4 +201,11 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     color: AppTheme.etiquetteTextColor,
   );
+
+  static const teaStoryText = TextStyle(
+    fontSize: 16,
+    fontFamily: siYuanHeiTiFont,
+    color: AppTheme.etiquetteTextColor,
+    height: 1.6
+  );
 }
