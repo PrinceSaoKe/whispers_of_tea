@@ -13,6 +13,7 @@ class AppAssets {
   static const String navTreeImg = '$_imagesPath/nav_tree.png';
   static const String teaIntroBg = '$_imagesPath/image_bg.png';
   static const String teapotImg = '$_imagesPath/teapot.png';
+  static const String dashedBorderImg = '$_imagesPath/dashed_border.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';
@@ -118,12 +119,12 @@ class AppAssets {
   static const String teaTech1 = '$_teaTechPath/tea_tech_1.png';
   static const String teaTech2 = '$_teaTechPath/tea_tech_2.png';
 
-  static const String ancientTeaTech1 = '$_teaTechPath/ancient_tea_tech_1.png';
-  static const String ancientTeaTech2 = '$_teaTechPath/ancient_tea_tech_2.png';
-  static const String ancientTeaTech3 = '$_teaTechPath/ancient_tea_tech_3.png';
-  static const String ancientTeaTech4 = '$_teaTechPath/ancient_tea_tech_4.png';
-  static const String ancientTeaTech5 = '$_teaTechPath/ancient_tea_tech_5.png';
-  static const String ancientTeaTech6 = '$_teaTechPath/ancient_tea_tech_6.png';
-  static const String ancientTeaTech7 = '$_teaTechPath/ancient_tea_tech_7.png';
-  static const String ancientTeaTech8 = '$_teaTechPath/ancient_tea_tech_8.png';
+  static const String ancientTeaTech1 = '$_teaTechPath/ancient_tech_1.png';
+  static const String ancientTeaTech2 = '$_teaTechPath/ancient_tech_2.png';
+  static const String ancientTeaTech3 = '$_teaTechPath/ancient_tech_3.png';
+  static const String ancientTeaTech4 = '$_teaTechPath/ancient_tech_4.png';
+  static const String ancientTeaTech5 = '$_teaTechPath/ancient_tech_5.png';
+  static const String ancientTeaTech6 = '$_teaTechPath/ancient_tech_6.png';
+  static const String ancientTeaTech7 = '$_teaTechPath/ancient_tech_7.png';
+  static const String ancientTeaTech8 = '$_teaTechPath/ancient_tech_8.png';
 }
