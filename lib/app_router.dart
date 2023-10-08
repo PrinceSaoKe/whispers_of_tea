@@ -13,6 +13,8 @@ import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_basic_manner.dar
 import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_culture_etiquette.dart';
 import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_etiquette.dart';
 import 'package:whispers_of_tea/pages/tea_culture_etiquette/tea_rules.dart';
+import 'package:whispers_of_tea/pages/tea_tech/ancient_tech.dart';
+import 'package:whispers_of_tea/pages/tea_tech/tea_tech.dart';
 
 class AppRouter {
   AppRouter._();
@@ -26,6 +28,8 @@ class AppRouter {
   static const String teaIntroduction =
       '/teaAppreciation/teaSpecies/teaIntroduction';
   static const String teaStory = '/teaAppreciation/teaStory';
+  static const String teaTech = '/teaAppreciation/teaTech';
+  static const String ancientTech = '/teaAppreciation/teaTech/ancientTech';
   static const String poetryCard = '/poetryCard';
   static const String makeTea = '/makeTea';
   static const String brewTea = '/brewTea';
@@ -43,6 +47,8 @@ class AppRouter {
     GetPage(name: teaSpecies, page: () => const TeaSpeciesPage()),
     GetPage(name: teaIntroduction, page: () => const TeaIntroductionPage()),
     GetPage(name: teaStory, page: () => const TeaStoryPage()),
+    GetPage(name: teaTech, page: () => const TeaTechPage()),
+    GetPage(name: ancientTech, page: () => const AncientTechPage()),
     GetPage(name: poetryCard, page: () => const PoetryCardPage()),
     GetPage(name: makeTea, page: () => const MakeTeaPage()),
     GetPage(name: brewTea, page: () => const BrewTeaPage()),

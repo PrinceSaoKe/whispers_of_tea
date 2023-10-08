@@ -92,19 +92,6 @@ class AppAssets {
   static const String teaHistory7 = '$_teaHistoryPath/tea_history_7.png';
   static const String teaHistory8 = '$_teaHistoryPath/tea_history_8.png';
 
-  /// 引导页相关图片
-  static const String _introductionAnimationPath =
-      '$_imagesPath/introduction_animation';
-
-  static const String introductionImage =
-      '$_introductionAnimationPath/introduction_image.png';
-  static const String relaxImage =
-      '$_introductionAnimationPath/relax_image.png';
-  static const String careImage = '$_introductionAnimationPath/care_image.png';
-  static const String moodDairyImage =
-      '$_introductionAnimationPath/mood_dairy_image.png';
-  static const String welcomeImage = '$_introductionAnimationPath/welcome.png';
-
   /// 饮茶文化习俗首页导航图
   static const String _teaCultureNavPath = '$_imagesPath/tea_culture_etiquette';
   static const String teaCultureNavImage1 =
@@ -116,7 +103,7 @@ class AppAssets {
   static const String teaCultureNavImage4 =
       '$_teaCultureNavPath/tea_culture_nav4.png';
 
-  ///饮茶文化习俗的四个页面首图
+  /// 饮茶文化习俗的四个页面首图
   static const String teaBasicMannerImage =
       '$_teaCultureNavPath/basic_manner.png';
   static const String teaRulesImage = '$_teaCultureNavPath/tea_rules.png';
@@ -124,4 +111,19 @@ class AppAssets {
       '$_teaCultureNavPath/tea_etiquette.png';
   static const String teaAttentionImage =
       '$_teaCultureNavPath/tea_attention.png';
+
+  /// 茶类工艺相关图片
+  static const String _teaTechPath = '$_imagesPath/tea_tech';
+
+  static const String teaTech1 = '$_teaTechPath/tea_tech_1.png';
+  static const String teaTech2 = '$_teaTechPath/tea_tech_2.png';
+
+  static const String ancientTeaTech1 = '$_teaTechPath/ancient_tea_tech_1.png';
+  static const String ancientTeaTech2 = '$_teaTechPath/ancient_tea_tech_2.png';
+  static const String ancientTeaTech3 = '$_teaTechPath/ancient_tea_tech_3.png';
+  static const String ancientTeaTech4 = '$_teaTechPath/ancient_tea_tech_4.png';
+  static const String ancientTeaTech5 = '$_teaTechPath/ancient_tea_tech_5.png';
+  static const String ancientTeaTech6 = '$_teaTechPath/ancient_tea_tech_6.png';
+  static const String ancientTeaTech7 = '$_teaTechPath/ancient_tea_tech_7.png';
+  static const String ancientTeaTech8 = '$_teaTechPath/ancient_tea_tech_8.png';
 }

@@ -46,10 +46,13 @@ class Navigation extends StatelessWidget {
           Positioned(
             left: width / 2 - 32,
             bottom: 65,
-            child: const NavigationIcon(
+            child: NavigationIcon(
               label: '工艺',
               imagePath: AppAssets.navGongYi,
               radius: 32,
+              onTap: () {
+                Get.toNamed(AppRouter.teaTech);
+              },
             ),
           ),
           Positioned(
