@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:whispers_of_tea/pages/brew_tea_step/brew_tea.dart';
 import 'package:whispers_of_tea/pages/home_page.dart';
+import 'package:whispers_of_tea/pages/login/pin_login.dart';
+import 'package:whispers_of_tea/pages/login/quick_login.dart';
 import 'package:whispers_of_tea/pages/make_tea_step/make_tea.dart';
 import 'package:whispers_of_tea/pages/poetry_card/poetry_card.dart';
 import 'package:whispers_of_tea/pages/tea_appreciation/tea_appreciation.dart';
@@ -38,6 +40,8 @@ class AppRouter {
   static const String teaRules = '/teaCultureEtiquette/teaRules';
   static const String teaEtiquette = '/teaCultureEtiquette/teaEtiquette';
   static const String teaAttention = '/teaCultureEtiquette/teaAttention';
+  static const String quickLogin = '/quickLogin';
+  static const String pinLogin = '/pinLogin';
 
   /// 所有路由
   static final List<GetPage> router = [
@@ -57,5 +61,7 @@ class AppRouter {
     GetPage(name: teaRules, page: () => const TeaRules()),
     GetPage(name: teaEtiquette, page: () => const TeaEtiquette()),
     GetPage(name: teaAttention, page: () => const TeaAttention()),
+    GetPage(name: quickLogin, page: () => const QuickLoginPage()),
+    GetPage(name: pinLogin, page: () => const PinLoginPage()),
   ];
 }

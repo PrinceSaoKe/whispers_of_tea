@@ -42,6 +42,12 @@ class AppTheme {
   static const Color teaInfoHeadBorderColor = Color(0xFF487555);
   static const Color teaStoryContainerBgColor =
       Color.fromRGBO(195, 214, 169, 0.37);
+  static const Color loginCheckBoxColor = Color(0xFF073002);
+  static const Color loginButtonDarkColor = Color(0xFF144019);
+  static const Color loginButtonLightColor = Color(0x62144019);
+  static const Color loginTextColor = Color(0xFF093802);
+  static const Color loginInputBgColor = Color(0x7E385C3C);
+  static const Color loginPinButtonColor = Color(0xFF264023);
 
   /// TeaInfo主题色
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);
@@ -91,6 +97,15 @@ class AppTheme {
     colors: [
       Color.fromRGBO(217, 230, 200, 1),
       Color.fromRGBO(255, 255, 255, 1),
+    ],
+  );
+
+  static const LinearGradient loginBgColor = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color.fromRGBO(11, 59, 16, 0.38),
+      Color.fromRGBO(11, 59, 16, 0.16),
     ],
   );
 

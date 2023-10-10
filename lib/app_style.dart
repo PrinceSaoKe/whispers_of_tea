@@ -207,4 +207,33 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     color: AppTheme.etiquetteTextColor,
   );
+
+  static const loginCheckBoxText = TextStyle(
+    fontSize: 14,
+    fontFamily: huangYouFont,
+  );
+
+  static const loginButtonText = TextStyle(
+    fontSize: 18,
+    fontFamily: huangYouFont,
+    color: Colors.white,
+  );
+
+  static const loginPageText = TextStyle(
+    fontSize: 34,
+    fontFamily: huangYouFont,
+    color: AppTheme.loginTextColor,
+  );
+
+  static const loginInputLabelText = TextStyle(
+    fontSize: 18,
+    fontFamily: huangYouFont,
+    color: AppTheme.loginCheckBoxColor,
+  );
+
+  static const loginPinButtonText = TextStyle(
+    fontSize: 18,
+    fontFamily: huangYouFont,
+    color: AppTheme.loginPinButtonColor,
+  );
 }

@@ -127,4 +127,9 @@ class AppAssets {
   static const String ancientTeaTech6 = '$_teaTechPath/ancient_tech_6.png';
   static const String ancientTeaTech7 = '$_teaTechPath/ancient_tech_7.png';
   static const String ancientTeaTech8 = '$_teaTechPath/ancient_tech_8.png';
+
+  /// 登录注册相关图片
+  static const String _loginPath = '$_imagesPath/login';
+
+  static const String loginBg = '$_loginPath/login_bg.png';
 }

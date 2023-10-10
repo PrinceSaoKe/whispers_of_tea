@@ -76,6 +76,7 @@ flutter:
     - assets/images/tea_history/
     - assets/images/tea_species/
     - assets/images/tea_tech/
+    - assets/images/login/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

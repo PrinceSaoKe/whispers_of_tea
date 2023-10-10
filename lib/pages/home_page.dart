@@ -41,6 +41,12 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text('前往泡茶页面'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(AppRouter.quickLogin);
+              },
+              child: const Text('前往登录页面'),
+            ),
           ],
         ),
       ),
