@@ -23,13 +23,6 @@ class AppNet {
     options.headers?['Token'] = token;
   }
 
-  static test() {
-    print(options.headers);
-    print('---------------------------------');
-    _setToken('我是token');
-    print(options.headers);
-  }
-
   /// 登录
   static Future<LoginModel> login({
     required String email,
