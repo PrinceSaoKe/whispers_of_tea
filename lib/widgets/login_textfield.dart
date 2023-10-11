@@ -9,11 +9,13 @@ class LoginTextfield extends StatelessWidget {
     this.label = '',
     this.controller,
     this.isPinTextfield = false,
+    this.hideText = false,
   });
 
   final String label;
   final TextEditingController? controller;
   final bool isPinTextfield;
+  final bool hideText;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class LoginTextfield extends StatelessWidget {
           child: Text(label, style: AppStyle.loginInputLabelText),
         ),
         TextField(
+          obscureText: hideText, // 输入密码模式
           decoration: InputDecoration(
             filled: true,
             fillColor: AppTheme.loginInputBgColor,
@@ -38,6 +41,9 @@ class LoginTextfield extends StatelessWidget {
             ),
             suffixIcon: isPinTextfield ? const SendPinButton() : null,
           ),
+          onChanged: (text) {
+            controller?.text = text;
+          },
         ),
       ],
     );

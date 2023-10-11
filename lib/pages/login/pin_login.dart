@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/app_assets.dart';
+import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/login_button.dart';
@@ -14,6 +15,7 @@ class PinLoginPage extends StatefulWidget {
 
 class _PinLoginPageState extends State<PinLoginPage> {
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final TextEditingController pinController = TextEditingController();
 
   @override
@@ -54,14 +56,28 @@ class _PinLoginPageState extends State<PinLoginPage> {
                 ),
                 const SizedBox(height: 20),
                 LoginTextfield(
+                  label: '密码',
+                  controller: passwordController,
+                  isPinTextfield: true,
+                  hideText: true,
+                ),
+                const SizedBox(height: 20),
+                LoginTextfield(
                   label: '验证码',
                   controller: pinController,
                   isPinTextfield: true,
                 ),
                 const SizedBox(height: 40),
-                const LoginButton(
+                LoginButton(
                   text: '立即登录',
                   backgroundColor: AppTheme.loginButtonDarkColor,
+                  onTap: () {
+                    AppNet.register(
+                      email: emailController.text,
+                      password: passwordController.text,
+                      pin: pinController.text,
+                    );
+                  },
                 ),
               ],
             ),
