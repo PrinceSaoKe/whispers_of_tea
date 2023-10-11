@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/constant/ancient_tech_info.dart';
+import 'package:whispers_of_tea/widgets/dashed_border_part.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 import 'package:whispers_of_tea/widgets/teapot_label.dart';
@@ -28,7 +28,10 @@ class AncientTechPage extends StatelessWidget {
                 } else {
                   Map<String, String> map = AncientTechInfo.dataList[index - 1];
                   return _getPart(
-                      map['title']!, map['text']!, map['imagePath']!);
+                    map['title']!,
+                    map['text']!,
+                    map['imagePath']!,
+                  );
                 }
               },
             ),
@@ -44,23 +47,7 @@ class AncientTechPage extends StatelessWidget {
       child: Column(
         children: [
           TeapotLabel(title),
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AppAssets.dashedBorderImg),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.values[1],
-              children: [
-                Image.asset(imagePath, width: 130, height: 80),
-                const SizedBox(width: 10),
-                Expanded(child: Text(text)),
-              ],
-            ),
-          ),
+          DashedBorderPart(text: text, imagePath: imagePath),
         ],
       ),
     );

@@ -236,4 +236,9 @@ class AppStyle {
     fontFamily: huangYouFont,
     color: AppTheme.loginPinButtonColor,
   );
+
+  static const dashedBorderPartText = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+  );
 }

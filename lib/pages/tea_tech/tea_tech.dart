@@ -38,7 +38,7 @@ class TeaTechPage extends StatelessWidget {
                     height: 230,
                     label: '泡茶工艺',
                     imagePath: AppAssets.teaTech2,
-                    route: AppRouter.ancientTech,
+                    route: AppRouter.brewTeaTech,
                     labelHeight: 50,
                   ),
                 ),

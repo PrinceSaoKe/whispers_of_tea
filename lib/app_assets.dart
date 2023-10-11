@@ -132,4 +132,14 @@ class AppAssets {
   static const String _loginPath = '$_imagesPath/login';
 
   static const String loginBg = '$_loginPath/login_bg.png';
+
+  /// 泡茶工艺相关图片
+  static const String _brewTeaTechPath = '$_imagesPath/brew_tea_tech_step';
+
+  static const String brewTeaTech1 = '$_brewTeaTechPath/brew_tea_tech_1.png';
+  static const String brewTeaTech2 = '$_brewTeaTechPath/brew_tea_tech_2.png';
+  static const String brewTeaTech3 = '$_brewTeaTechPath/brew_tea_tech_3.png';
+  static const String brewTeaTech4 = '$_brewTeaTechPath/brew_tea_tech_4.png';
+  static const String brewTeaTech5 = '$_brewTeaTechPath/brew_tea_tech_5.png';
+  static const String brewTeaTech6 = '$_brewTeaTechPath/brew_tea_tech_6.png';
 }
