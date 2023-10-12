@@ -14,35 +14,39 @@ class ShowcasePage extends StatefulWidget {
 class _ShowcasePageState extends State<ShowcasePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          const GradientBackground(),
-          ScrollConfiguration(
-            behavior:
-                ScrollConfiguration.of(context).copyWith(overscroll: false),
-            child: ListView(
-              shrinkWrap: true,
-              children: [
-                const MyAppBar(title: '茶语橱窗'),
-                _getLabel('热门推荐'),
-                _getPageBar(),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  child: PageView(
-                    children: [
-                      _getPage(),
-                      _getPage(),
-                      _getPage(),
-                    ],
-                  ),
+    return Stack(
+      children: [
+        const GradientBackground(),
+        ScrollConfiguration(
+          behavior: ScrollConfiguration.of(context).copyWith(overscroll: false),
+          child: CustomScrollView(
+            shrinkWrap: true,
+            slivers: [
+              const MyAppBar(title: '茶语橱窗'),
+              _getLabel('热门推荐'),
+              _getPageBar(),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  childCount: 1,
+                  (context, index) {
+                    return SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      child: PageView(
+                        children: [
+                          _getPage(),
+                          _getPage(),
+                          _getPage(),
+                        ],
+                      ),
+                    );
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -104,7 +108,49 @@ class _ShowcasePageState extends State<ShowcasePage> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
       shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       children: const [
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
+        Text('data'),
         Text('data'),
       ],
     );
