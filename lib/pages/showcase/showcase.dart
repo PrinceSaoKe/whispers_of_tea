@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
@@ -20,7 +21,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
           const GradientBackground(),
           ScrollConfiguration(
             behavior:
-                ScrollConfiguration.of(context).copyWith(overscroll: false),
+            ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               shrinkWrap: true,
               children: [
@@ -104,8 +105,14 @@ class _ShowcasePageState extends State<ShowcasePage> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
       shrinkWrap: true,
-      children: const [
+      children: [
         Text('data'),
+        InkWell(
+          onTap: (){
+            AppNet.queryById(id: '9999');
+          },
+          child: Text('data1111'),
+        )
       ],
     );
   }
