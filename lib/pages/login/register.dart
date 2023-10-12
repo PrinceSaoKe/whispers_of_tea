@@ -7,6 +7,7 @@ import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/model/simple_model.dart';
 import 'package:whispers_of_tea/widgets/login_button.dart';
 import 'package:whispers_of_tea/widgets/login_textfield.dart';
+import 'package:whispers_of_tea/widgets/message_dialog.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -19,6 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController pinController = TextEditingController();
+  bool checked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +45,15 @@ class _RegisterPageState extends State<RegisterPage> {
             child: ListView(
               padding: const EdgeInsets.all(20),
               children: [
-                const SizedBox(height: 90),
+                const SizedBox(height: 65),
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                    '你好\n欢迎来到茶语',
+                    '你好，\n欢迎来到茶语',
                     style: AppStyle.loginPageText,
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 35),
                 LoginTextfield(
                   label: '邮箱',
                   controller: emailController,
@@ -69,7 +71,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   isPinTextfield: true,
                   email: emailController.text,
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
+                _getCheckBox(),
+                const SizedBox(height: 20),
                 LoginButton(
                   text: '立即注册',
                   backgroundColor: AppTheme.loginButtonDarkColor,
@@ -79,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       password: passwordController.text,
                       pin: pinController.text,
                     );
-                    Get.defaultDialog(title: model.msg ?? '未知错误');
+                    Get.dialog(MessageDialog(title: model.msg ?? '未知错误'));
                   },
                 ),
               ],
@@ -87,6 +91,31 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ],
       ),
+    );
+  }
+
+  _getCheckBox() {
+    return Row(
+      children: [
+        Checkbox(
+          value: checked,
+          activeColor: AppTheme.loginCheckBoxColor,
+          shape: const CircleBorder(
+            side: BorderSide(color: AppTheme.loginCheckBoxColor),
+          ),
+          onChanged: (value) {
+            setState(() {
+              checked = value ?? true;
+            });
+          },
+        ),
+        const Expanded(
+          child: Text(
+            '我已阅读并同意《中国移动认证服务协议》\n《用户协议》和《隐私政策》并授权茶语获取本机号码',
+            style: AppStyle.loginCheckBoxText,
+          ),
+        ),
+      ],
     );
   }
 }

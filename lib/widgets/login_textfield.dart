@@ -48,8 +48,11 @@ class LoginTextfield extends StatelessWidget {
             suffixIcon: isPinTextfield
                 ? SendPinButton(
                     onTap: () async {
-                      SimpleModel model =
-                          await AppNet.sendPin(email: email ?? '');
+                      if (email == null || email == '') {
+                        Get.dialog(const MessageDialog(title: '请输入邮箱'));
+                      }
+                      Get.dialog(const MessageDialog(title: '正在发送邮件...'));
+                      SimpleModel model = await AppNet.sendPin(email: email!);
                       Get.dialog(MessageDialog(title: model.msg));
                     },
                   )

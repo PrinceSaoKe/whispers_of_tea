@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whispers_of_tea/app_assets.dart';
+import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_router.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
+import 'package:whispers_of_tea/model/login_model.dart';
 import 'package:whispers_of_tea/widgets/login_button.dart';
+import 'package:whispers_of_tea/widgets/login_textfield.dart';
+import 'package:whispers_of_tea/widgets/message_dialog.dart';
 
 class QuickLoginPage extends StatefulWidget {
   const QuickLoginPage({super.key});
@@ -14,11 +18,13 @@ class QuickLoginPage extends StatefulWidget {
 }
 
 class _QuickLoginPageState extends State<QuickLoginPage> {
-  bool checked = false;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false, // 避免输入法弹出时背景图被压缩变形
       body: Stack(
         children: [
           Image.asset(
@@ -42,26 +48,42 @@ class _QuickLoginPageState extends State<QuickLoginPage> {
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                    '快速登录\n需要验证手机号',
+                    '你好，\n欢迎回到茶语',
                     style: AppStyle.loginPageText,
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 const Center(
                   child: Text(
-                    '[  131****5685  ]',
+                    '2596818595@qq.com',
                     style: AppStyle.loginPageText,
                   ),
                 ),
+                const SizedBox(height: 25),
+                LoginTextfield(
+                  label: '邮箱',
+                  controller: emailController,
+                ),
+                const SizedBox(height: 20),
+                LoginTextfield(
+                  label: '密码',
+                  controller: passwordController,
+                  hideText: true,
+                ),
                 const SizedBox(height: 50),
-                _getCheckBox(),
-                const SizedBox(height: 50),
-                const LoginButton(
+                LoginButton(
                   text: '一键登录',
                   backgroundColor: AppTheme.loginButtonDarkColor,
+                  onTap: () async {
+                    LoginModel model = await AppNet.login(
+                      email: emailController.text,
+                      password: passwordController.text,
+                    );
+                    Get.dialog(MessageDialog(title: model.msg ?? '未知错误'));
+                  },
                 ),
                 LoginButton(
-                  text: '手机号登录',
+                  text: '邮箱注册',
                   backgroundColor: AppTheme.loginButtonLightColor,
                   onTap: () {
                     Get.toNamed(AppRouter.pinLogin);
@@ -72,31 +94,6 @@ class _QuickLoginPageState extends State<QuickLoginPage> {
           ),
         ],
       ),
-    );
-  }
-
-  _getCheckBox() {
-    return Row(
-      children: [
-        Checkbox(
-          value: checked,
-          activeColor: AppTheme.loginCheckBoxColor,
-          shape: const CircleBorder(
-            side: BorderSide(color: AppTheme.loginCheckBoxColor),
-          ),
-          onChanged: (value) {
-            setState(() {
-              checked = value ?? true;
-            });
-          },
-        ),
-        const Expanded(
-          child: Text(
-            '我已阅读并同意《中国移动认证服务协议》\n《用户协议》和《隐私政策》并授权茶语获取本机号码',
-            style: AppStyle.loginCheckBoxText,
-          ),
-        ),
-      ],
     );
   }
 }
