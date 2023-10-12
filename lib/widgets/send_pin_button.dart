@@ -3,14 +3,20 @@ import 'package:whispers_of_tea/app_style.dart';
 
 /// 发送验证码的按钮
 class SendPinButton extends StatelessWidget {
-  const SendPinButton({super.key});
+  const SendPinButton({super.key, this.onTap});
+
+  final Function? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 7),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          if (onTap != null) {
+            onTap!();
+          }
+        },
         style: TextButton.styleFrom(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8)),

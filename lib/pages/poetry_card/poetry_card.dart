@@ -137,9 +137,9 @@ class _PoetryCardPageState extends State<PoetryCardPage> {
       final result = await ImageGallerySaver.saveImage(uint8List);
 
       if (result['isSuccess']) {
-        getMessageDialog(context, title: '图片保存成功！');
+        const MessageDialog(title: '图片保存成功！');
       } else {
-        getMessageDialog(context, title: '图片保存失败！');
+        const MessageDialog(title: '图片保存失败！');
       }
     } catch (e) {
       getMessageDialog(context, title: '发生错误！', text: e.toString());

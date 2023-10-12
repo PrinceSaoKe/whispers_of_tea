@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
+import 'package:whispers_of_tea/model/simple_model.dart';
+import 'package:whispers_of_tea/widgets/message_dialog.dart';
 import 'package:whispers_of_tea/widgets/send_pin_button.dart';
 
 class LoginTextfield extends StatelessWidget {
@@ -10,12 +14,14 @@ class LoginTextfield extends StatelessWidget {
     this.controller,
     this.isPinTextfield = false,
     this.hideText = false,
+    this.email,
   });
 
   final String label;
   final TextEditingController? controller;
   final bool isPinTextfield;
   final bool hideText;
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +45,15 @@ class LoginTextfield extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(style: BorderStyle.none),
             ),
-            suffixIcon: isPinTextfield ? const SendPinButton() : null,
+            suffixIcon: isPinTextfield
+                ? SendPinButton(
+                    onTap: () async {
+                      SimpleModel model =
+                          await AppNet.sendPin(email: email ?? '');
+                      Get.dialog(MessageDialog(title: model.msg));
+                    },
+                  )
+                : null,
           ),
           onChanged: (text) {
             controller?.text = text;

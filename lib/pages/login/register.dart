@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
+import 'package:whispers_of_tea/model/simple_model.dart';
 import 'package:whispers_of_tea/widgets/login_button.dart';
 import 'package:whispers_of_tea/widgets/login_textfield.dart';
 
-class PinLoginPage extends StatefulWidget {
-  const PinLoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<PinLoginPage> createState() => _PinLoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _PinLoginPageState extends State<PinLoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController pinController = TextEditingController();
@@ -58,7 +60,6 @@ class _PinLoginPageState extends State<PinLoginPage> {
                 LoginTextfield(
                   label: '密码',
                   controller: passwordController,
-                  isPinTextfield: true,
                   hideText: true,
                 ),
                 const SizedBox(height: 20),
@@ -66,17 +67,19 @@ class _PinLoginPageState extends State<PinLoginPage> {
                   label: '验证码',
                   controller: pinController,
                   isPinTextfield: true,
+                  email: emailController.text,
                 ),
                 const SizedBox(height: 40),
                 LoginButton(
-                  text: '立即登录',
+                  text: '立即注册',
                   backgroundColor: AppTheme.loginButtonDarkColor,
-                  onTap: () {
-                    AppNet.register(
+                  onTap: () async {
+                    SimpleModel model = await AppNet.register(
                       email: emailController.text,
                       password: passwordController.text,
                       pin: pinController.text,
                     );
+                    Get.defaultDialog(title: model.msg ?? '未知错误');
                   },
                 ),
               ],

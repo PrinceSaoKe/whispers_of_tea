@@ -12,7 +12,7 @@ class AppNet {
 
   static const _loginUrl = '$baseUrl/user/login';
   static const _registerUrl = '$baseUrl/user/register';
-  // static const _sendPinUrl = '$baseUrl/email/sendEmail';
+  static const _sendPinUrl = '$baseUrl/email/sendEmail';
   // static const _getShopInfoUrl = '$baseUrl/email/sendEmail';
 
   /// 设置token
@@ -54,6 +54,15 @@ class AppNet {
       'code': pin,
     });
     Response response = await dio.post(_registerUrl, data: formData);
+    return SimpleModel.fromJson(response.data);
+  }
+
+  /// 发送验证码
+  static Future<SimpleModel> sendPin({
+    required String email,
+  }) async {
+    FormData formData = FormData.fromMap({'email': email});
+    Response response = await dio.post(_sendPinUrl, data: formData);
     return SimpleModel.fromJson(response.data);
   }
 }
