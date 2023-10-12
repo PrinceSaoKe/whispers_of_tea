@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:whispers_of_tea/model/login_model.dart';
 import 'package:whispers_of_tea/model/simple_model.dart';
 
+import 'model/query_model.dart';
+
 class AppNet {
   static Dio dio = Dio();
 
@@ -12,7 +14,10 @@ class AppNet {
 
   static const _loginUrl = '$baseUrl/user/login';
   static const _registerUrl = '$baseUrl/user/register';
+  static const _queryByIdUrl = '$baseUrl/commodity/queryById';
+
   static const _sendPinUrl = '$baseUrl/email/sendEmail';
+  // static const _sendPinUrl = '$baseUrl/email/sendEmail';
   // static const _getShopInfoUrl = '$baseUrl/email/sendEmail';
 
   /// 设置token
@@ -64,5 +69,18 @@ class AppNet {
     FormData formData = FormData.fromMap({'email': email});
     Response response = await dio.post(_sendPinUrl, data: formData);
     return SimpleModel.fromJson(response.data);
+  }
+
+  /// 获取商品信息 byId
+  static Future<QueryModel> queryById({
+    required String id
+  }) async {
+    String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NTcyMjZjZjI0NzM0OWQ3YmY5NTgzMWY5ZGNkNTEzMSIsInN1YiI6IjEiLCJpc3MiOiJzZyIsImlhdCI6MTY5NzEyMTMyNywiZXhwIjoxNjk3MTI0OTI3fQ.0QK8K68ka7P2RSaDdJLwDBdczzTGxCAxfyCfw44vJnQ";
+    _setToken(token);
+    String qbu = _queryByIdUrl+'/'+id;
+    Response response = await dio.get(qbu,options: options );
+    print('---${response.data}----');
+    QueryModel model = QueryModel.fromJson(response.data);
+    return model;
   }
 }
