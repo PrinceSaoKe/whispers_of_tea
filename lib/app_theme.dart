@@ -48,6 +48,9 @@ class AppTheme {
   static const Color loginTextColor = Color(0xFF093802);
   static const Color loginInputBgColor = Color(0x7E385C3C);
   static const Color loginPinButtonColor = Color(0xFF264023);
+  static const Color showcaseLabelColor = Color(0xFF487555);
+  static const Color showcasePageBarSelectItemBgColor = Color(0x51025C1D);
+  static const Color showcasePageBarUnselectItemBgColor = Color(0x518BCC9E);
 
   /// TeaInfo主题色
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);

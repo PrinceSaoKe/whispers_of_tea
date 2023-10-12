@@ -241,4 +241,22 @@ class AppStyle {
     fontSize: 14,
     fontFamily: siYuanHeiTiFont,
   );
+
+  static const showcaseLabelText = TextStyle(
+    fontSize: 18,
+    fontFamily: siYuanHeiTiFont,
+    color: AppTheme.showcaseLabelColor,
+  );
+
+  static const showcasePageBarUnselectItemText = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+    color: AppTheme.showcaseLabelColor,
+  );
+
+  static const showcasePageBarSelectItemText = TextStyle(
+    fontSize: 14,
+    fontFamily: siYuanHeiTiFont,
+    color: Colors.white,
+  );
 }
