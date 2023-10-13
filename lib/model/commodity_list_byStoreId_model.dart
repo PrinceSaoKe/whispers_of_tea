@@ -1,4 +1,4 @@
-import 'commodity_byId_model.dart';
+import 'commodity_by_id_model.dart';
 
 class CommodityByStoreIdModel {
   final List<CommodityModel> records;

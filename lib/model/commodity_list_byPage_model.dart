@@ -1,8 +1,8 @@
 import 'package:whispers_of_tea/model/base_model.dart';
 
-import 'commodity_byId_model.dart';
+import 'commodity_by_id_model.dart';
 
-class CommodityListModel extends BaseModel{
+class CommodityListModel extends BaseModel {
   final List<CommodityModel> records;
   final int total;
   final int size;

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:whispers_of_tea/model/commodity_byId_model.dart';
+import 'package:whispers_of_tea/model/commodity_by_id_model.dart';
 import 'package:whispers_of_tea/model/login_model.dart';
 import 'package:whispers_of_tea/model/simple_model.dart';
 import 'package:whispers_of_tea/model/store_model.dart';
@@ -17,13 +17,10 @@ class AppNet {
 
   static const _loginUrl = '$baseUrl/user/login';
   static const _registerUrl = '$baseUrl/user/register';
+  static const _sendPinUrl = '$baseUrl/email/sendEmail';
   static const _queryByIdUrl = '$baseUrl/commodity/queryById';
   static const _queryByPage = '$baseUrl/commodity/queryByPage';
   static const _queryByStoreId = '$baseUrl/commodity/queryByStoreId';
-
-  static const _sendPinUrl = '$baseUrl/email/sendEmail';
-  // static const _sendPinUrl = '$baseUrl/email/sendEmail';
-  // static const _getShopInfoUrl = '$baseUrl/email/sendEmail';
 
   /// 设置token
   static _setToken(String token) {
@@ -44,6 +41,7 @@ class AppNet {
     });
     Response response = await dio.post(_loginUrl, data: formData);
     LoginModel model = LoginModel.fromJson(response.data);
+    // 更新token
     if (model.token != null) {
       _setToken(model.token!);
     }
@@ -77,61 +75,51 @@ class AppNet {
   }
 
   /// 获取商品信息 byId
-  static Future<CommodityModel> queryById({
-    required String id
-  }) async {
-    String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NTcyMjZjZjI0NzM0OWQ3YmY5NTgzMWY5ZGNkNTEzMSIsInN1YiI6IjEiLCJpc3MiOiJzZyIsImlhdCI6MTY5NzEyMTMyNywiZXhwIjoxNjk3MTI0OTI3fQ.0QK8K68ka7P2RSaDdJLwDBdczzTGxCAxfyCfw44vJnQ";
-    _setToken(token);
-    String qbu = _queryByIdUrl+'/'+id;
-    Response response = await dio.get(qbu,options: options );
+  ///
+  /// 调用前先登录
+  static Future<CommodityModel> queryById({required String id}) async {
+    String qbu = '$_queryByIdUrl/$id';
+    Response response = await dio.get(qbu, options: options);
     CommodityModel model = CommodityModel.fromJson(response.data);
     return model;
   }
 
   /// 获取商品列表 byPage
-  static Future<CommodityListModel> queryByPage({
-    required String id
-  }) async {
-    String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NTcyMjZjZjI0NzM0OWQ3YmY5NTgzMWY5ZGNkNTEzMSIsInN1YiI6IjEiLCJpc3MiOiJzZyIsImlhdCI6MTY5NzEyMTMyNywiZXhwIjoxNjk3MTI0OTI3fQ.0QK8K68ka7P2RSaDdJLwDBdczzTGxCAxfyCfw44vJnQ";
-    _setToken(token);
-    String qbu = _queryByPage+'/'+id;
-    Response response = await dio.get(qbu,options: options );
+  ///
+  /// 调用前先登录
+  static Future<CommodityListModel> queryByPage({required String id}) async {
+    String qbu = '$_queryByPage/$id';
+    Response response = await dio.get(qbu, options: options);
     CommodityListModel model = CommodityListModel.fromJson(response.data);
     return model;
   }
 
   /// 获取商品列表 byStoreId
-  static Future<CommodityListModel> queryByStoreId({
-    required String id
-  }) async {
-    String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NTcyMjZjZjI0NzM0OWQ3YmY5NTgzMWY5ZGNkNTEzMSIsInN1YiI6IjEiLCJpc3MiOiJzZyIsImlhdCI6MTY5NzEyMTMyNywiZXhwIjoxNjk3MTI0OTI3fQ.0QK8K68ka7P2RSaDdJLwDBdczzTGxCAxfyCfw44vJnQ";
-    _setToken(token);
-    String qbu = _queryByStoreId+'/'+id;
-    Response response = await dio.get(qbu,options: options );
+  ///
+  /// 调用前先登录
+  static Future<CommodityListModel> queryByStoreId({required String id}) async {
+    String qbu = '$_queryByStoreId/$id';
+    Response response = await dio.get(qbu, options: options);
     CommodityListModel model = CommodityListModel.fromJson(response.data);
     return model;
   }
 
   /// 获取店铺
-  static Future<StoreDetailModel> getStore({
-    required String id
-  }) async {
-    String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NTcyMjZjZjI0NzM0OWQ3YmY5NTgzMWY5ZGNkNTEzMSIsInN1YiI6IjEiLCJpc3MiOiJzZyIsImlhdCI6MTY5NzEyMTMyNywiZXhwIjoxNjk3MTI0OTI3fQ.0QK8K68ka7P2RSaDdJLwDBdczzTGxCAxfyCfw44vJnQ";
-    _setToken(token);
-    String qbu = _queryByStoreId+'/'+id;
-    Response response = await dio.get(qbu,options: options );
+  ///
+  /// 调用前先登录
+  static Future<StoreDetailModel> getStore({required String id}) async {
+    String qbu = '$_queryByStoreId/$id';
+    Response response = await dio.get(qbu, options: options);
     StoreDetailModel model = StoreDetailModel.fromJson(response.data);
     return model;
   }
 
   /// 获取店铺列表
-  static Future<StoreListModel> getStoreList({
-    required String id
-  }) async {
-    String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NTcyMjZjZjI0NzM0OWQ3YmY5NTgzMWY5ZGNkNTEzMSIsInN1YiI6IjEiLCJpc3MiOiJzZyIsImlhdCI6MTY5NzEyMTMyNywiZXhwIjoxNjk3MTI0OTI3fQ.0QK8K68ka7P2RSaDdJLwDBdczzTGxCAxfyCfw44vJnQ";
-    _setToken(token);
-    String qbu = _queryByStoreId+'/'+id;
-    Response response = await dio.get(qbu,options: options );
+  ///
+  /// 调用前先登录
+  static Future<StoreListModel> getStoreList({required String id}) async {
+    String qbu = '$_queryByStoreId/$id';
+    Response response = await dio.get(qbu, options: options);
     StoreListModel model = StoreListModel.fromJson(response.data);
     return model;
   }
