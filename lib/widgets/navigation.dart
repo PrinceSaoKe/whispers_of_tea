@@ -24,51 +24,11 @@ class Navigation extends StatelessWidget {
           needBgImg ? _getImageBackground() : const SizedBox(),
           showIcons
               ? Positioned(
-                  left: 10,
-                  bottom: 15,
+                  left: 20,
+                  bottom: 30,
                   child: NavigationIcon(
-                    label: '历史',
+                    label: '茶风茗俗',
                     imagePath: AppAssets.navLiShi,
-                    onTap: () {
-                      Get.toNamed(AppRouter.teaHistory);
-                    },
-                  ),
-                )
-              : const SizedBox(),
-          showIcons
-              ? Positioned(
-                  left: 70,
-                  bottom: 55,
-                  child: NavigationIcon(
-                    label: '种类',
-                    imagePath: AppAssets.navZhongLei,
-                    onTap: () {
-                      Get.toNamed(AppRouter.teaSpecies);
-                    },
-                  ),
-                )
-              : const SizedBox(),
-          showIcons
-              ? Positioned(
-                  left: width / 2 - 32,
-                  bottom: 65,
-                  child: NavigationIcon(
-                    label: '工艺',
-                    imagePath: AppAssets.navGongYi,
-                    radius: 32,
-                    onTap: () {
-                      Get.toNamed(AppRouter.teaTech);
-                    },
-                  ),
-                )
-              : const SizedBox(),
-          showIcons
-              ? Positioned(
-                  right: 70,
-                  bottom: 55,
-                  child: NavigationIcon(
-                    label: '习俗',
-                    imagePath: AppAssets.navXiSu,
                     onTap: () {
                       Get.toNamed(AppRouter.teaCultureEtiquette);
                     },
@@ -77,13 +37,53 @@ class Navigation extends StatelessWidget {
               : const SizedBox(),
           showIcons
               ? Positioned(
-                  right: 10,
-                  bottom: 15,
+                  left: 100,
+                  bottom: 65,
                   child: NavigationIcon(
-                    label: '故事',
+                    label: '茶语百科',
                     imagePath: AppAssets.navGuShi,
                     onTap: () {
-                      Get.toNamed(AppRouter.teaStory);
+                      Get.toNamed(AppRouter.teaSpecies);
+                    },
+                  ),
+                )
+              : const SizedBox(),
+          // showIcons
+          //     ? Positioned(
+          //         left: width / 2 - 32,
+          //         bottom: 65,
+          //         child: NavigationIcon(
+          //           label: '工艺',
+          //           imagePath: AppAssets.navGongYi,
+          //           radius: 32,
+          //           onTap: () {
+          //             Get.toNamed(AppRouter.teaTech);
+          //           },
+          //         ),
+          //       )
+          //     : const SizedBox(),
+          showIcons
+              ? Positioned(
+                  right: 100,
+                  bottom: 65,
+                  child: NavigationIcon(
+                    label: '茶叶工艺',
+                    imagePath: AppAssets.navXiSu,
+                    onTap: () {
+                      Get.toNamed(AppRouter.teaTech);
+                    },
+                  ),
+                )
+              : const SizedBox(),
+          showIcons
+              ? Positioned(
+                  right: 20,
+                  bottom: 30,
+                  child: NavigationIcon(
+                    label: '茶语橱窗',
+                    imagePath: AppAssets.navZhongLei,
+                    onTap: () {
+                      Get.toNamed(AppRouter.showcase);
                     },
                   ),
                 )

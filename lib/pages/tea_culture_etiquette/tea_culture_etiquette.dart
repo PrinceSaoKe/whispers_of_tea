@@ -6,7 +6,6 @@ import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
-import 'package:whispers_of_tea/widgets/navigation.dart';
 
 class TeaCultureEqi extends StatelessWidget {
   const TeaCultureEqi({Key? key}) : super(key: key);
@@ -23,7 +22,7 @@ class TeaCultureEqi extends StatelessWidget {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: [
-                const MyAppBar(title: "文化习俗"),
+                const MyAppBar(title: "茶风茗俗"),
                 _getNavigationCard(
                   "基础礼仪",
                   AppAssets.teaCultureNavImage1,
@@ -44,11 +43,11 @@ class TeaCultureEqi extends StatelessWidget {
                   AppAssets.teaCultureNavImage4,
                   AppRouter.teaAttention,
                 ),
-                const SizedBox(height: 160),
+                // const SizedBox(height: 160),
               ],
             ),
           ),
-          const Positioned(bottom: 0, child: Navigation(needBgImg: false)),
+          // const Positioned(bottom: 0, child: Navigation(needBgImg: false)),
         ],
       ),
     );

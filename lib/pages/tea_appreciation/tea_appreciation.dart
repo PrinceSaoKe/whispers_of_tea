@@ -31,7 +31,7 @@ class _TeaApprePageState extends State<TeaApprePage> {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: [
-                const MyAppBar(title: '茶语鉴赏', leadingText: '主页面'),
+                const MyAppBar(title: '茶语', showLeading: false),
                 DefaultSwiper(height: 120, dataList: swiperList),
                 _getSubSwiper(),
                 _getLabel('今日推荐'),

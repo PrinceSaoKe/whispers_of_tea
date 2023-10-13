@@ -10,19 +10,21 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.height = kToolbarHeight,
     this.leadingText = '返回',
     this.backgroundColor = Colors.transparent,
+    this.showLeading = true,
   });
 
   final String title;
   final double height;
   final String leadingText;
   final Color backgroundColor;
+  final bool showLeading;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title, style: AppStyle.appBarTitleStyle),
       centerTitle: true,
-      leading: Leading(text: leadingText),
+      leading: showLeading ? Leading(text: leadingText) : null,
       leadingWidth: 100,
       automaticallyImplyLeading: false, // 是否需要自动生成leading
       backgroundColor: backgroundColor,

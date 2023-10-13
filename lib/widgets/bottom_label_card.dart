@@ -38,18 +38,23 @@ class BottomLabelCard extends StatelessWidget {
           image:
               DecorationImage(image: AssetImage(imagePath), fit: BoxFit.fill),
         ),
-        child: Container(
-          width: width,
-          height: labelHeight,
-          alignment: Alignment.center,
-          decoration: const BoxDecoration(
-            color: AppTheme.teaAppreGridBgColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                height: labelHeight,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  color: AppTheme.teaAppreGridBgColor,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                ),
+                child: Text(label, style: AppStyle.teaAppreGridStyle),
+              ),
             ),
-          ),
-          child: Text(label, style: AppStyle.teaAppreGridStyle),
+          ],
         ),
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whispers_of_tea/app_router.dart';
 import 'package:whispers_of_tea/constant/ancient_tech_info.dart';
 import 'package:whispers_of_tea/widgets/dashed_border_part.dart';
+import 'package:whispers_of_tea/widgets/experience_button.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 import 'package:whispers_of_tea/widgets/teapot_label.dart';
@@ -24,7 +26,10 @@ class AncientTechPage extends StatelessWidget {
                 if (index == 0) {
                   return const MyAppBar(title: '古法制茶');
                 } else if (index == AncientTechInfo.dataList.length + 1) {
-                  return const SizedBox(height: 10);
+                  return const ExperienceButton(
+                    text: '体验制茶步骤',
+                    route: AppRouter.makeTea,
+                  );
                 } else {
                   Map<String, String> map = AncientTechInfo.dataList[index - 1];
                   return _getPart(

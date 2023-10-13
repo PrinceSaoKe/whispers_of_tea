@@ -4,7 +4,6 @@ import 'package:whispers_of_tea/app_router.dart';
 import 'package:whispers_of_tea/widgets/bottom_label_card.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
-import 'package:whispers_of_tea/widgets/navigation.dart';
 
 class TeaTechPage extends StatelessWidget {
   const TeaTechPage({super.key});
@@ -20,7 +19,7 @@ class TeaTechPage extends StatelessWidget {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: const [
-                MyAppBar(title: '茶类工艺'),
+                MyAppBar(title: '茶叶工艺'),
                 SizedBox(height: 10),
                 Padding(
                   padding: EdgeInsets.fromLTRB(30, 0, 30, 20),
@@ -45,7 +44,7 @@ class TeaTechPage extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(bottom: 0, child: Navigation()),
+          // const Positioned(bottom: 0, child: Navigation()),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whispers_of_tea/app_router.dart';
 import 'package:whispers_of_tea/constant/brew_tea_tech_step.dart';
 import 'package:whispers_of_tea/widgets/dashed_border_part.dart';
+import 'package:whispers_of_tea/widgets/experience_button.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 
@@ -25,7 +27,10 @@ class BrewTeaTech extends StatelessWidget {
                 if (index == 0) {
                   return const MyAppBar(title: '泡茶步骤');
                 } else if (index == dataList.length + 1) {
-                  return const SizedBox(height: 30);
+                  return const ExperienceButton(
+                    text: '体验泡茶步骤',
+                    route: AppRouter.brewTea,
+                  );
                 } else {
                   return _getPart(
                     dataList[index - 1]['text'],
