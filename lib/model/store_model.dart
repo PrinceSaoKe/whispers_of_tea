@@ -1,6 +1,6 @@
 import 'package:whispers_of_tea/model/base_model.dart';
 
-class StoreDetailModel extends BaseModel{
+class StoreDetailModel extends BaseModel {
   final int id;
   final String name;
   final String link;
@@ -8,6 +8,8 @@ class StoreDetailModel extends BaseModel{
   final List<String> imageList;
 
   StoreDetailModel({
+    super.code,
+    super.msg,
     required this.id,
     required this.name,
     required this.link,

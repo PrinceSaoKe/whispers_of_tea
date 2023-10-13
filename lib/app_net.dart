@@ -4,7 +4,7 @@ import 'package:whispers_of_tea/model/login_model.dart';
 import 'package:whispers_of_tea/model/simple_model.dart';
 import 'package:whispers_of_tea/model/store_model.dart';
 
-import 'model/commodity_list_byPage_model.dart';
+import 'model/commodity_list_by_page_model.dart';
 import 'model/store_list_model.dart';
 
 class AppNet {

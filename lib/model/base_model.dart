@@ -4,7 +4,7 @@ abstract class BaseModel {
   String? msg;
 
   BaseModel({
-    this.code,
-    this.msg,
+    required this.code,
+    required this.msg,
   });
 }

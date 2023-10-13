@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
-import 'package:whispers_of_tea/model/commodity_list_byPage_model.dart';
+import 'package:whispers_of_tea/model/commodity_list_by_page_model.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 
@@ -96,7 +96,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
     // 根据索引加载对应的 imageList
     CommodityListModel model = await AppNet.queryByPage(id: '$index');
     setState(() {
-      imageList = model.records.cast<Map>();
+      imageList = model.records?.cast<Map>() ?? [];
     });
   }
 

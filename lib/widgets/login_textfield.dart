@@ -50,8 +50,12 @@ class LoginTextfield extends StatelessWidget {
                     onTap: () async {
                       if (email == null || email == '') {
                         Get.dialog(const MessageDialog(title: '请输入邮箱'));
+                        return;
                       }
-                      Get.dialog(const MessageDialog(title: '正在发送邮件...'));
+                      Get.dialog(const MessageDialog(
+                        title: '正在发送邮件',
+                        content: '发送邮件可能需要较长时间，请耐心等待...',
+                      ));
                       SimpleModel model = await AppNet.sendPin(email: email!);
                       Get.dialog(MessageDialog(title: model.msg));
                     },
