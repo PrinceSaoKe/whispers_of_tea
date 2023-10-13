@@ -259,4 +259,10 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     color: Colors.white,
   );
+
+  static const showcaseCommodityText = TextStyle(
+    fontSize: 18,
+    fontFamily: siYuanHeiTiFont,
+    color: Color(-12094379),
+  );
 }
