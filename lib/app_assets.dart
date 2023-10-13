@@ -14,6 +14,8 @@ class AppAssets {
   static const String teaIntroBg = '$_imagesPath/image_bg.png';
   static const String teapotImg = '$_imagesPath/teapot.png';
   static const String dashedBorderImg = '$_imagesPath/dashed_border.png';
+  static const String homeBg = '$_imagesPath/home_bg.png';
+  static const String chayuImg = '$_imagesPath/chayu.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';

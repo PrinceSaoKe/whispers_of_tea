@@ -7,9 +7,10 @@ import 'package:whispers_of_tea/widgets/nav_icon.dart';
 
 /// 导航栏
 class Navigation extends StatelessWidget {
-  const Navigation({super.key, this.needBgImg = true});
+  const Navigation({super.key, this.needBgImg = true, this.showIcons = true});
 
   final bool needBgImg;
+  final bool showIcons;
 
   @override
   Widget build(BuildContext context) {
@@ -21,62 +22,72 @@ class Navigation extends StatelessWidget {
         children: [
           _getCircleBackground(),
           needBgImg ? _getImageBackground() : const SizedBox(),
-          Positioned(
-            left: 10,
-            bottom: 15,
-            child: NavigationIcon(
-              label: '历史',
-              imagePath: AppAssets.navLiShi,
-              onTap: () {
-                Get.toNamed(AppRouter.teaHistory);
-              },
-            ),
-          ),
-          Positioned(
-            left: 70,
-            bottom: 55,
-            child: NavigationIcon(
-              label: '种类',
-              imagePath: AppAssets.navZhongLei,
-              onTap: () {
-                Get.toNamed(AppRouter.teaSpecies);
-              },
-            ),
-          ),
-          Positioned(
-            left: width / 2 - 32,
-            bottom: 65,
-            child: NavigationIcon(
-              label: '工艺',
-              imagePath: AppAssets.navGongYi,
-              radius: 32,
-              onTap: () {
-                Get.toNamed(AppRouter.teaTech);
-              },
-            ),
-          ),
-          Positioned(
-            right: 70,
-            bottom: 55,
-            child: NavigationIcon(
-              label: '习俗',
-              imagePath: AppAssets.navXiSu,
-              onTap: () {
-                Get.toNamed(AppRouter.teaCultureEtiquette);
-              },
-            ),
-          ),
-          Positioned(
-            right: 10,
-            bottom: 15,
-            child: NavigationIcon(
-              label: '故事',
-              imagePath: AppAssets.navGuShi,
-              onTap: () {
-                Get.toNamed(AppRouter.teaStory);
-              },
-            ),
-          ),
+          showIcons
+              ? Positioned(
+                  left: 10,
+                  bottom: 15,
+                  child: NavigationIcon(
+                    label: '历史',
+                    imagePath: AppAssets.navLiShi,
+                    onTap: () {
+                      Get.toNamed(AppRouter.teaHistory);
+                    },
+                  ),
+                )
+              : const SizedBox(),
+          showIcons
+              ? Positioned(
+                  left: 70,
+                  bottom: 55,
+                  child: NavigationIcon(
+                    label: '种类',
+                    imagePath: AppAssets.navZhongLei,
+                    onTap: () {
+                      Get.toNamed(AppRouter.teaSpecies);
+                    },
+                  ),
+                )
+              : const SizedBox(),
+          showIcons
+              ? Positioned(
+                  left: width / 2 - 32,
+                  bottom: 65,
+                  child: NavigationIcon(
+                    label: '工艺',
+                    imagePath: AppAssets.navGongYi,
+                    radius: 32,
+                    onTap: () {
+                      Get.toNamed(AppRouter.teaTech);
+                    },
+                  ),
+                )
+              : const SizedBox(),
+          showIcons
+              ? Positioned(
+                  right: 70,
+                  bottom: 55,
+                  child: NavigationIcon(
+                    label: '习俗',
+                    imagePath: AppAssets.navXiSu,
+                    onTap: () {
+                      Get.toNamed(AppRouter.teaCultureEtiquette);
+                    },
+                  ),
+                )
+              : const SizedBox(),
+          showIcons
+              ? Positioned(
+                  right: 10,
+                  bottom: 15,
+                  child: NavigationIcon(
+                    label: '故事',
+                    imagePath: AppAssets.navGuShi,
+                    onTap: () {
+                      Get.toNamed(AppRouter.teaStory);
+                    },
+                  ),
+                )
+              : const SizedBox(),
         ],
       ),
     );
