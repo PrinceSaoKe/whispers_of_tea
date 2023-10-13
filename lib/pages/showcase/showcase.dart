@@ -29,7 +29,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
           const GradientBackground(),
           ScrollConfiguration(
             behavior:
-            ScrollConfiguration.of(context).copyWith(overscroll: false),
+                ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               shrinkWrap: true,
               children: [
@@ -55,7 +55,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
                 ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
@@ -133,6 +133,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
       shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       children: [
         GridView.count(
           crossAxisCount: 2,
@@ -177,9 +178,8 @@ class _ShowcasePageState extends State<ShowcasePage> {
               name,style: AppStyle.showcaseCommodityText,
             ),
           ),
-        )
+        ),
       ],
     );
   }
-
 }
