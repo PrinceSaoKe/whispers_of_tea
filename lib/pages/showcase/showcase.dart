@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
+import 'package:whispers_of_tea/model/commodity_byId_model.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
+
+import '../../model/commodity_list_byPage_model.dart';
 
 class ShowcasePage extends StatefulWidget {
   const ShowcasePage({super.key});
@@ -13,6 +16,11 @@ class ShowcasePage extends StatefulWidget {
 }
 
 class _ShowcasePageState extends State<ShowcasePage> {
+  int selectedTabIndex = 0;
+  final List<String> tabTitles = ['茶叶', '茶品', '茶具'];
+  List <Map> imageList = [];
+  String name = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +40,17 @@ class _ShowcasePageState extends State<ShowcasePage> {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   child: PageView(
+                    controller: PageController(initialPage: selectedTabIndex),
                     children: [
-                      _getPage(),
-                      _getPage(),
-                      _getPage(),
+                      _getPage(0),
+                      _getPage(1),
+                      _getPage(2),
                     ],
+                    onPageChanged: (index) {
+                      setState(() {
+                        selectedTabIndex = index; // 更新选中的索引
+                      });
+                    },
                   ),
                 ),
               ],
@@ -73,47 +87,98 @@ class _ShowcasePageState extends State<ShowcasePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _getPageBarItem(title: '茶叶', selected: true),
-          _getPageBarItem(title: '茶品'),
-          _getPageBarItem(title: '茶具'),
+          for (int i = 0; i < tabTitles.length; i++)
+            _getPageBarItem(title: tabTitles[i], index: i),
         ],
       ),
     );
   }
 
-  _getPageBarItem({required String title, bool selected = false}) {
+  _loadImageList(int index) async {
+    // 根据索引加载对应的 imageList
+    CommodityListModel model = await AppNet.queryByPage(id: '$index') as CommodityListModel;
+    setState(() {
+      imageList = model.records.cast<Map>();
+    });
+  }
+  _getPageBarItem({required String title, required int index}) {
     return Container(
       width: 80,
       height: 25,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: selected
+        color: index == selectedTabIndex
             ? AppTheme.showcasePageBarSelectItemBgColor
             : AppTheme.showcasePageBarUnselectItemBgColor,
         borderRadius: BorderRadius.circular(14.5),
       ),
-      child: Text(
-        title,
-        style: selected
-            ? AppStyle.showcasePageBarSelectItemText
-            : AppStyle.showcasePageBarUnselectItemText,
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            selectedTabIndex = index; // 更新选中的索引
+            _loadImageList(selectedTabIndex);
+          });
+        },
+        child: Text(
+          title,
+          style: index == selectedTabIndex
+              ? AppStyle.showcasePageBarSelectItemText
+              : AppStyle.showcasePageBarUnselectItemText,
+        ),
       ),
     );
   }
 
-  _getPage() {
+  _getPage(int index) {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
       children: [
-        Text('data'),
-        InkWell(
-          onTap: () {
-            AppNet.queryById(id: '9999');
-          },
-          child: Text('data1111'),
-        )
+        GridView.count(
+          crossAxisCount: 2,
+          shrinkWrap: true,
+          mainAxisSpacing: 20,
+          children: [
+            for (var imageUrl in imageList)
+              _getImageContainer(imageUrl['link'],imageUrl['name']),
+          ],
+        ),
+      ],
+    );
+  }
+
+  _getImageContainer(String img,String name){
+    return Column(
+      children: [
+        Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            color: Colors.green,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(7),
+              topRight: Radius.circular(7)
+            )
+          ),
+          child: Image.network(img,fit: BoxFit.fill,),
+        ),
+        Container(
+          height: 35,
+          width: 150,
+          decoration: BoxDecoration(
+              color: Colors.greenAccent,
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(7),
+              bottomLeft: Radius.circular(7)
+            )
+          ),
+          child: Center(
+            child: Text(
+              name,style: AppStyle.showcaseCommodityText,
+            ),
+          ),
+        ),
       ],
     );
   }
