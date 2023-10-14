@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/constant/tea_info.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
@@ -122,47 +123,64 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
   _getContainer1() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-      child: Container(
-        margin: const EdgeInsets.only(top: 15),
-        padding: const EdgeInsets.fromLTRB(15, 10, 15, 15),
-        decoration: BoxDecoration(
-          border: Border.all(width: 1, color: teaInfo.color),
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('冲泡需要注意水温和冲泡方法：', style: AppStyle.teaIntroLabelStyle),
-            Text(teaInfo.makeTeaMethod, style: AppStyle.teaIntroTextStyle),
-            const SizedBox(height: 5),
-            const Text('茶叶的冲泡比例：', style: AppStyle.teaIntroLabelStyle),
-            Text(teaInfo.teaWaterRatio, style: AppStyle.teaIntroTextStyle),
-          ],
-        ),
+      child: Stack(
+        children: [
+          Positioned(
+            right: 0,
+            child: Image.asset('${AppAssets.teaIntroDeco1}${teaInfo.name}.png'),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 25),
+            padding: const EdgeInsets.fromLTRB(15, 10, 15, 15),
+            decoration: BoxDecoration(
+              border: Border.all(width: 1, color: teaInfo.color),
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('冲泡需要注意水温和冲泡方法：',
+                    style: AppStyle.teaIntroLabelStyle),
+                Text(teaInfo.makeTeaMethod, style: AppStyle.teaIntroTextStyle),
+                const SizedBox(height: 5),
+                const Text('茶叶的冲泡比例：', style: AppStyle.teaIntroLabelStyle),
+                Text(teaInfo.teaWaterRatio, style: AppStyle.teaIntroTextStyle),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 
   _getContainer2() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-      child: Container(
-        margin: const EdgeInsets.only(top: 15),
-        padding: const EdgeInsets.fromLTRB(15, 10, 15, 15),
-        decoration: BoxDecoration(
-          border: Border.all(width: 1, color: teaInfo.color),
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('出汤时间：', style: AppStyle.teaIntroLabelStyle),
-            Text(teaInfo.time, style: AppStyle.teaIntroTextStyle),
-            const SizedBox(height: 5),
-            const Text('冲泡注意事项：', style: AppStyle.teaIntroLabelStyle),
-            Text(teaInfo.note, style: AppStyle.teaIntroTextStyle),
-          ],
-        ),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+      child: Stack(
+        children: [
+          Positioned(
+            right: 0,
+            child: Image.asset('${AppAssets.teaIntroDeco2}${teaInfo.name}.png'),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.fromLTRB(15, 10, 15, 15),
+            decoration: BoxDecoration(
+              border: Border.all(width: 1, color: teaInfo.color),
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('出汤时间：', style: AppStyle.teaIntroLabelStyle),
+                Text(teaInfo.time, style: AppStyle.teaIntroTextStyle),
+                const SizedBox(height: 5),
+                const Text('冲泡注意事项：', style: AppStyle.teaIntroLabelStyle),
+                Text(teaInfo.note, style: AppStyle.teaIntroTextStyle),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

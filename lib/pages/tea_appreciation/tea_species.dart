@@ -61,11 +61,11 @@ class _TeaSpeciesPageState extends State<TeaSpeciesPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
                     _getTeaCard('绿茶', AppAssets.greenTea, 0),
-                    _getTeaCard('红茶', AppAssets.redTea, 1),
+                    _getTeaCard('白茶', AppAssets.whiteTea, 1),
                     _getTeaCard('黄茶', AppAssets.yellowTea, 2),
-                    _getTeaCard('白茶', AppAssets.whiteTea, 3),
-                    _getTeaCard('黑茶', AppAssets.blackTea, 4),
-                    _getTeaCard('乌龙茶', AppAssets.oolongTea, 5),
+                    _getTeaCard('乌龙茶', AppAssets.oolongTea, 3),
+                    _getTeaCard('红茶', AppAssets.redTea, 4),
+                    _getTeaCard('黑茶', AppAssets.blackTea, 5),
                   ],
                 ),
                 // const Row(

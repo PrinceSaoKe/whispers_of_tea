@@ -57,7 +57,7 @@ class AppTheme {
   static const Color redTeaThemeColor = Color(0xFF832817);
   static const Color yellowTeaThemeColor = Color(0xFFEFCF7B);
   static const Color whiteTeaThemeColor = Color.fromARGB(255, 174, 174, 174);
-  static const Color blackTeaThemeColor = Color(0xFF303030);
+  static const Color blackTeaThemeColor = Color.fromRGBO(48, 48, 48, 1);
   static const Color oolongTeaThemeColor = Color(0xFF1CB27C);
 
   /// 渐变色

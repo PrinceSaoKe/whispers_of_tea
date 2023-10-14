@@ -17,7 +17,7 @@ class TeaInfo {
   });
 
   String name;
-  int temperature;
+  String temperature;
   int teaWeight;
   int waterVolume;
   String warmOrCold;
@@ -31,9 +31,9 @@ class TeaInfo {
   static List<TeaInfo> teaInfoList = [
     TeaInfo(
       name: '绿茶',
-      temperature: 85,
+      temperature: '≥85',
       teaWeight: 3,
-      waterVolume: 130,
+      waterVolume: 195,
       warmOrCold: '性寒',
       introduction:
           '绿茶是传统六大茶类之一，属于不发酵茶。茶叶的产地广泛分布在陕西、浙江、福建、云南、河南、安徽、湖北等地，采用鲜嫩的茶树芽叶经过杀青、揉捻和干燥等工序制作而成。',
@@ -46,40 +46,10 @@ class TeaInfo {
       color: AppTheme.greenTeaThemeColor,
     ),
     TeaInfo(
-      name: '红茶',
-      temperature: 95,
-      teaWeight: 5,
-      waterVolume: 120,
-      warmOrCold: '性温',
-      introduction: '红茶是我国最大的出口茶，属于全发酵茶类。\n它以干茶色泽、冲泡后的茶汤和叶底呈现红色为主调而得名。',
-      makeTeaMethod:
-          '先准备好盖碗和一壶开水，用开水将茶具清洗一遍。然后用茶针将茶叶拨入盖碗中，注入约90°C的水（沿碗壁注水），浸润约5秒后即可出汤，将茶汤滤入公道杯，最后分入茶杯品饮。',
-      teaWaterRatio: '一般为1:25，即1克茶叶配25毫升水,茶叶用量约为5克，水量约为120毫升。',
-      time:
-          '红茶的出汤时间要快，前13泡都是约5秒出汤，从第4泡开始逐渐延长至约10秒，第810泡为约15秒，依次递增。出汤后不要盖上茶杯的盖子。',
-      note: '在冲泡红茶时要注意水温不宜太低，以免无法发挥红茶独特的甜香滋味。每一泡的盖碗茶汤一定要倒干净，以保持后续茶汤的口感。',
-      color: AppTheme.redTeaThemeColor,
-    ),
-    TeaInfo(
-      name: '黄茶',
-      temperature: 90,
-      teaWeight: 5,
-      waterVolume: 120,
-      warmOrCold: '性凉',
-      introduction: '黄茶属于轻微发酵茶类，具有黄汤和黄叶的特点。\n制茶工艺与绿茶相似，但在过程中有焖黄的环节。',
-      makeTeaMethod:
-          '先准备好盖碗和一壶开水，用开水将茶具清洗一遍。然后用茶针将茶叶拨入盖碗中，注入约90℃的水（沿碗壁注水），浸润约5秒后即可出汤，将茶汤滤入公道杯，最后分入茶杯品饮。',
-      teaWaterRatio: '一般为1:25，即1克茶叶配25毫升水，茶叶用量约为5克，水量约为120毫升。',
-      time:
-          '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
-      note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
-      color: AppTheme.yellowTeaThemeColor,
-    ),
-    TeaInfo(
       name: '白茶',
-      temperature: 90,
+      temperature: '90~100',
       teaWeight: 5,
-      waterVolume: 120,
+      waterVolume: 250,
       warmOrCold: '性凉',
       introduction: '黄茶属于轻微发酵茶类，具有黄汤和黄叶的特点。\n制茶工艺与绿茶相似，但在过程中有焖黄的环节。',
       makeTeaMethod:
@@ -91,10 +61,10 @@ class TeaInfo {
       color: AppTheme.whiteTeaThemeColor,
     ),
     TeaInfo(
-      name: '黑茶',
-      temperature: 90,
+      name: '黄茶',
+      temperature: '90',
       teaWeight: 5,
-      waterVolume: 120,
+      waterVolume: 250,
       warmOrCold: '性凉',
       introduction: '黄茶属于轻微发酵茶类，具有黄汤和黄叶的特点。\n制茶工艺与绿茶相似，但在过程中有焖黄的环节。',
       makeTeaMethod:
@@ -103,14 +73,14 @@ class TeaInfo {
       time:
           '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
       note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
-      color: AppTheme.blackTeaThemeColor,
+      color: AppTheme.yellowTeaThemeColor,
     ),
     TeaInfo(
       name: '乌龙茶',
-      temperature: 90,
+      temperature: '90',
       teaWeight: 5,
-      waterVolume: 120,
-      warmOrCold: '性凉',
+      waterVolume: 150,
+      warmOrCold: '性平',
       introduction: '黄茶属于轻微发酵茶类，具有黄汤和黄叶的特点。\n制茶工艺与绿茶相似，但在过程中有焖黄的环节。',
       makeTeaMethod:
           '先准备好盖碗和一壶开水，用开水将茶具清洗一遍。然后用茶针将茶叶拨入盖碗中，注入约90℃的水（沿碗壁注水），浸润约5秒后即可出汤，将茶汤滤入公道杯，最后分入茶杯品饮。',
@@ -119,6 +89,36 @@ class TeaInfo {
           '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
       note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
       color: AppTheme.oolongTeaThemeColor,
+    ),
+    TeaInfo(
+      name: '红茶',
+      temperature: '95',
+      teaWeight: 5,
+      waterVolume: 275,
+      warmOrCold: '性温',
+      introduction: '红茶是我国最大的出口茶，属于全发酵茶类。\n它以干茶色泽、冲泡后的茶汤和叶底呈现红色为主调而得名。',
+      makeTeaMethod:
+          '先准备好盖碗和一壶开水，用开水将茶具清洗一遍。然后用茶针将茶叶拨入盖碗中，注入约90°C的水（沿碗壁注水），浸润约5秒后即可出汤，将茶汤滤入公道杯，最后分入茶杯品饮。',
+      teaWaterRatio: '一般为1:25，即1克茶叶配25毫升水,茶叶用量约为5克，水量约为120毫升。',
+      time:
+          '红茶的出汤时间要快，前13泡都是约5秒出汤，从第4泡开始逐渐延长至约10秒，第810泡为约15秒，依次递增。出汤后不要盖上茶杯的盖子。',
+      note: '在冲泡红茶时要注意水温不宜太低，以免无法发挥红茶独特的甜香滋味。每一泡的盖碗茶汤一定要倒干净，以保持后续茶汤的口感。',
+      color: AppTheme.redTeaThemeColor,
+    ),
+    TeaInfo(
+      name: '黑茶',
+      temperature: '90',
+      teaWeight: 5,
+      waterVolume: 150,
+      warmOrCold: '性温',
+      introduction: '黄茶属于轻微发酵茶类，具有黄汤和黄叶的特点。\n制茶工艺与绿茶相似，但在过程中有焖黄的环节。',
+      makeTeaMethod:
+          '先准备好盖碗和一壶开水，用开水将茶具清洗一遍。然后用茶针将茶叶拨入盖碗中，注入约90℃的水（沿碗壁注水），浸润约5秒后即可出汤，将茶汤滤入公道杯，最后分入茶杯品饮。',
+      teaWaterRatio: '一般为1:25，即1克茶叶配25毫升水，茶叶用量约为5克，水量约为120毫升。',
+      time:
+          '出汤时间较短，最好的口感在头几泡，不需要进行茶叶洗涤，第一泡即可真接品饮。如果使用盖碗，约6秒左右即可出汤，如果使用玻璃杯，漫泡约3分钟后即可饮用。',
+      note: '最好使用玻璃杯作为茶具。投茶量过多是导致茶汤过苦过涩的主要原因。对于比较嫩的芽茶，可以使用85°C左右的水温进行冲泡。',
+      color: AppTheme.blackTeaThemeColor,
     ),
   ];
 }

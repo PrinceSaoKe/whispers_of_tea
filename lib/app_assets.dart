@@ -62,8 +62,8 @@ class AppAssets {
   static const String blackTea = '$_teaSpeciesPath/black_tea.png';
   static const String oolongTea = '$_teaSpeciesPath/oolong_tea.png';
 
-  static const String teaIntroDeco1 = '$_teaSpeciesPath/tea_intro_deco_1.png';
-  static const String teaIntroDeco2 = '$_teaSpeciesPath/tea_intro_deco_2.png';
+  static const String teaIntroDeco1 = '$_teaSpeciesPath/tea_intro_deco_1';
+  static const String teaIntroDeco2 = '$_teaSpeciesPath/tea_intro_deco_2';
 
   /// 导航栏相关图片
   static const String _navPath = '$_imagesPath/nav';
