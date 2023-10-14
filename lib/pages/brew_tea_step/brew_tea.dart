@@ -54,6 +54,28 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
                 ],
               ),
             ),
+            Positioned(
+              bottom: 90,
+              right: 130,
+              child: Container(
+                width: 200,
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      currStep > 1 ? AppAssets.gif1 : AppAssets.gif2,
+                    ),
+                    scale: 2.5,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 20,
+              right: -30,
+              child: Image.asset(AppAssets.girlImg),
+            ),
           ],
         ),
       ),
@@ -86,17 +108,21 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
 
   /// 文本框
   _getContentRect() {
-    return Container(
-      width: 365,
-      height: 128,
-      padding: const EdgeInsets.fromLTRB(35, 20, 35, 20),
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(AppAssets.brewTeaStepBorder),
-          fit: BoxFit.fill,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+      child: Container(
+        width: 365,
+        height: 150,
+        alignment: Alignment.center,
+        padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AppAssets.brewTeaStepBorder),
+            fit: BoxFit.fill,
+          ),
         ),
+        child: Text(content, style: AppStyle.brewTeaTextStyle),
       ),
-      child: Text(content, style: AppStyle.brewTeaTextStyle),
     );
   }
 }

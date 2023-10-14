@@ -145,4 +145,11 @@ class AppAssets {
   static const String brewTeaTech4 = '$_brewTeaTechPath/brew_tea_tech_4.png';
   static const String brewTeaTech5 = '$_brewTeaTechPath/brew_tea_tech_5.png';
   static const String brewTeaTech6 = '$_brewTeaTechPath/brew_tea_tech_6.png';
+
+  /// 动画
+  static const String _animationsPath = '$_imagesPath/animations';
+
+  static const String gif1 = '$_animationsPath/gif1.gif';
+  static const String gif2 = '$_animationsPath/gif2.gif';
+  static const String gif3 = '$_animationsPath/gif3.gif';
 }

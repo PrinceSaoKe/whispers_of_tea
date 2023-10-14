@@ -59,6 +59,26 @@ class _MakeTeaPageState extends State<MakeTeaPage> {
                 ],
               ),
             ),
+            Positioned(
+              bottom: 110,
+              right: 90,
+              child: Container(
+                width: 240,
+                height: 120,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(
+                    image: AssetImage(AppAssets.gif3),
+                    scale: 2.5,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 20,
+              right: -70,
+              child: Image.asset(AppAssets.girlImg),
+            ),
           ],
         ),
       ),
