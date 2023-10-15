@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:whispers_of_tea/addons/swiper.dart';
 import 'package:whispers_of_tea/app_assets.dart';
+import 'package:whispers_of_tea/app_router.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
@@ -118,26 +120,32 @@ class _TeaApprePageState extends State<TeaApprePage> {
   }
 
   _getRecommendCard(String text, String imagePath) {
-    return Container(
-      width: 180,
-      height: 100,
-      alignment: Alignment.bottomCenter,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.fill),
-      ),
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed(AppRouter.quickLogin);
+      },
       child: Container(
         width: 180,
-        height: 26,
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(
-          color: AppTheme.teaAppreGridBgColor,
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
-          ),
+        height: 100,
+        alignment: Alignment.bottomCenter,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          image:
+              DecorationImage(image: AssetImage(imagePath), fit: BoxFit.fill),
         ),
-        child: Text(text, style: AppStyle.teaAppreGridStyle),
+        child: Container(
+          width: 180,
+          height: 26,
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+            color: AppTheme.teaAppreGridBgColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            ),
+          ),
+          child: Text(text, style: AppStyle.teaAppreGridStyle),
+        ),
       ),
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
+import 'package:whispers_of_tea/model/commodity_by_id_model.dart';
 import 'package:whispers_of_tea/model/commodity_list_by_page_model.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
@@ -14,10 +16,18 @@ class ShowcasePage extends StatefulWidget {
 }
 
 class _ShowcasePageState extends State<ShowcasePage> {
+  final PageController controller = PageController();
   int selectedTabIndex = 0;
   final List<String> tabTitles = ['茶叶', '茶品', '茶具'];
-  List<Map> imageList = [];
-  String name = '';
+  List<CommodityModel> dataList = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    isLoading = true;
+    _loadImageList(selectedTabIndex);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +46,9 @@ class _ShowcasePageState extends State<ShowcasePage> {
                 _getPageBar(),
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  height: MediaQuery.of(context).size.height - 178,
                   child: PageView(
-                    controller: PageController(initialPage: selectedTabIndex),
+                    controller: controller,
                     children: [
                       _getPage(0),
                       _getPage(1),
@@ -47,6 +57,8 @@ class _ShowcasePageState extends State<ShowcasePage> {
                     onPageChanged: (index) {
                       setState(() {
                         selectedTabIndex = index; // 更新选中的索引
+                        isLoading = true;
+                        _loadImageList(selectedTabIndex);
                       });
                     },
                   ),
@@ -96,7 +108,8 @@ class _ShowcasePageState extends State<ShowcasePage> {
     // 根据索引加载对应的 imageList
     CommodityListModel model = await AppNet.queryByPage(id: '$index');
     setState(() {
-      imageList = model.records?.cast<Map>() ?? [];
+      dataList = model.records ?? [];
+      isLoading = false;
     });
   }
 
@@ -129,51 +142,56 @@ class _ShowcasePageState extends State<ShowcasePage> {
   }
 
   _getPage(int index) {
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+    if (isLoading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    if (dataList.isEmpty) {
+      return const Center(
+        child: Text('暂无商品', style: AppStyle.showcaseCommodityText),
+      );
+    }
+    return GridView.count(
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      crossAxisCount: 2,
+      mainAxisSpacing: 20,
+      crossAxisSpacing: 20,
+      childAspectRatio: 0.8,
       shrinkWrap: true,
-      physics: const ClampingScrollPhysics(),
       children: [
-        GridView.count(
-          crossAxisCount: 2,
-          shrinkWrap: true,
-          mainAxisSpacing: 20,
-          children: [
-            for (var imageUrl in imageList)
-              _getImageContainer(imageUrl['link'], imageUrl['name']),
-          ],
-        ),
+        for (CommodityModel data in dataList) _getImageContainer(data),
       ],
     );
   }
 
-  _getImageContainer(String img, String name) {
+  _getImageContainer(CommodityModel model) {
     return Column(
       children: [
         Container(
-          height: 150,
-          width: 150,
           decoration: const BoxDecoration(
-            color: Colors.green,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(7),
               topRight: Radius.circular(7),
             ),
           ),
-          child: Image.network(img, fit: BoxFit.fill),
+          child: model.coverImage == null
+              ? Image.asset(AppAssets.noImg, fit: BoxFit.cover)
+              : Image.network(model.coverImage!, fit: BoxFit.cover),
         ),
         Container(
           height: 35,
           width: 150,
+          alignment: Alignment.center,
           decoration: const BoxDecoration(
-            color: Colors.greenAccent,
+            color: AppTheme.showcaseItemNameBgColor,
             borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(7),
               bottomLeft: Radius.circular(7),
             ),
           ),
-          child: Center(
-            child: Text(name, style: AppStyle.showcaseCommodityText),
+          child: Text(
+            model.name ?? '暂无商品名',
+            style: AppStyle.showcaseCommodityText,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
       ],

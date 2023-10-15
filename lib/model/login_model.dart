@@ -16,7 +16,7 @@ class LoginModel extends BaseModel {
     return LoginModel(
       code: json['code'],
       msg: json['msg'],
-      token: json['token'],
+      token: data['token'],
     );
   }
 }

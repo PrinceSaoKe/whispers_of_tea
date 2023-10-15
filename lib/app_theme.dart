@@ -51,6 +51,7 @@ class AppTheme {
   static const Color showcaseLabelColor = Color(0xFF487555);
   static const Color showcasePageBarSelectItemBgColor = Color(0x51025C1D);
   static const Color showcasePageBarUnselectItemBgColor = Color(0x518BCC9E);
+  static const Color showcaseItemNameBgColor = Color(0x506DA67E);
 
   /// TeaInfo主题色
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);

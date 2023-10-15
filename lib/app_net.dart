@@ -90,6 +90,7 @@ class AppNet {
   static Future<CommodityListModel> queryByPage({required String id}) async {
     String qbu = '$_queryByPage/$id';
     Response response = await dio.get(qbu, options: options);
+    print(response.data);
     CommodityListModel model = CommodityListModel.fromJson(response.data);
     return model;
   }

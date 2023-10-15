@@ -17,6 +17,7 @@ class AppAssets {
   static const String homeBg = '$_imagesPath/home_bg.png';
   static const String chayuImg = '$_imagesPath/chayu.png';
   static const String girlImg = '$_imagesPath/girl.png';
+  static const String noImg = '$_imagesPath/no_image.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';

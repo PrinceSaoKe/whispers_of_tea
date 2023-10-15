@@ -54,13 +54,16 @@ class TeaCultureEqi extends StatelessWidget {
   }
 
   _getNavigationCard(String label, String imagePath, String route) {
-    return GestureDetector(
-      onTap: () {
-        Get.toNamed(route);
-      },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [_getLabel(label), _getImage(imagePath)],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+      child: GestureDetector(
+        onTap: () {
+          Get.toNamed(route);
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [_getLabel(label), _getImage(imagePath)],
+        ),
       ),
     );
   }
