@@ -11,6 +11,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingText = '返回',
     this.backgroundColor = Colors.transparent,
     this.showLeading = true,
+    this.actions,
   });
 
   final String title;
@@ -18,6 +19,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String leadingText;
   final Color backgroundColor;
   final bool showLeading;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       shadowColor: Colors.transparent,
       elevation: 0,
       foregroundColor: Colors.black,
+      actions: actions,
     );
   }
 

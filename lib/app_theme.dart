@@ -40,8 +40,7 @@ class AppTheme {
   static const Color navIconLabelColor = Color(0xFF547A64);
   static const Color navCircleBgColor = Color(0xFFD9E6C8);
   static const Color teaInfoHeadBorderColor = Color(0xFF487555);
-  static const Color teaStoryContainerBgColor =
-      Color.fromRGBO(195, 214, 169, 0.37);
+  static const Color teaStoryContainerBgColor = Color(0x5EC3D6A9);
   static const Color loginCheckBoxColor = Color(0xFF073002);
   static const Color loginButtonDarkColor = Color(0xFF144019);
   static const Color loginButtonLightColor = Color(0x62144019);
@@ -57,8 +56,8 @@ class AppTheme {
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);
   static const Color redTeaThemeColor = Color(0xFF832817);
   static const Color yellowTeaThemeColor = Color(0xFFEFCF7B);
-  static const Color whiteTeaThemeColor = Color.fromARGB(255, 174, 174, 174);
-  static const Color blackTeaThemeColor = Color.fromRGBO(48, 48, 48, 1);
+  static const Color whiteTeaThemeColor = Color(0xFFAEAEAE);
+  static const Color blackTeaThemeColor = Color(0xFF303030);
   static const Color oolongTeaThemeColor = Color(0xFF1CB27C);
 
   /// 渐变色

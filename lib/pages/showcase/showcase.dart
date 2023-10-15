@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
@@ -164,37 +165,45 @@ class _ShowcasePageState extends State<ShowcasePage> {
   }
 
   _getImageContainer(CommodityModel model) {
-    return Column(
-      children: [
-        Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(7),
-              topRight: Radius.circular(7),
+    return GestureDetector(
+      onTap: () async {
+        final Uri url = Uri.parse(model.link ?? '');
+        if (!await launchUrl(url)) {
+          throw Exception('无法打开网页$url');
+        }
+      },
+      child: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(7),
+                topRight: Radius.circular(7),
+              ),
+            ),
+            child: model.coverImage == null
+                ? Image.asset(AppAssets.noImg, fit: BoxFit.cover)
+                : Image.network(model.coverImage!, fit: BoxFit.cover),
+          ),
+          Container(
+            height: 35,
+            width: 150,
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: AppTheme.showcaseItemNameBgColor,
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(7),
+                bottomLeft: Radius.circular(7),
+              ),
+            ),
+            child: Text(
+              model.name ?? '暂无商品名',
+              style: AppStyle.showcaseCommodityText,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
-          child: model.coverImage == null
-              ? Image.asset(AppAssets.noImg, fit: BoxFit.cover)
-              : Image.network(model.coverImage!, fit: BoxFit.cover),
-        ),
-        Container(
-          height: 35,
-          width: 150,
-          alignment: Alignment.center,
-          decoration: const BoxDecoration(
-            color: AppTheme.showcaseItemNameBgColor,
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(7),
-              bottomLeft: Radius.circular(7),
-            ),
-          ),
-          child: Text(
-            model.name ?? '暂无商品名',
-            style: AppStyle.showcaseCommodityText,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

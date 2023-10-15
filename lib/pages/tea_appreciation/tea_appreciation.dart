@@ -33,7 +33,18 @@ class _TeaApprePageState extends State<TeaApprePage> {
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
             child: ListView(
               children: [
-                const MyAppBar(title: '茶语', showLeading: false),
+                MyAppBar(
+                  title: '茶语',
+                  showLeading: false,
+                  actions: [
+                    IconButton(
+                      onPressed: () {
+                        Get.toNamed(AppRouter.quickLogin);
+                      },
+                      icon: const Icon(Icons.manage_accounts_rounded),
+                    ),
+                  ],
+                ),
                 DefaultSwiper(height: 120, dataList: swiperList),
                 _getSubSwiper(),
                 _getLabel('今日推荐'),
@@ -121,9 +132,7 @@ class _TeaApprePageState extends State<TeaApprePage> {
 
   _getRecommendCard(String text, String imagePath) {
     return GestureDetector(
-      onTap: () {
-        Get.toNamed(AppRouter.quickLogin);
-      },
+      onTap: () {},
       child: Container(
         width: 180,
         height: 100,
