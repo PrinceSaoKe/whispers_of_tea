@@ -129,6 +129,11 @@ class _ShowcasePageState extends State<ShowcasePage> {
         onTap: () {
           setState(() {
             selectedTabIndex = index; // 更新选中的索引
+            controller.animateToPage(
+              selectedTabIndex,
+              duration: const Duration(microseconds: 500),
+              curve: Curves.ease,
+            );
             _loadImageList(selectedTabIndex);
           });
         },

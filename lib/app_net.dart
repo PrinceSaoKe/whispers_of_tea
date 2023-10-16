@@ -1,11 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:whispers_of_tea/model/commodity_by_id_model.dart';
+import 'package:whispers_of_tea/model/commodity_list_by_page_model.dart';
 import 'package:whispers_of_tea/model/login_model.dart';
 import 'package:whispers_of_tea/model/simple_model.dart';
+import 'package:whispers_of_tea/model/store_list_model.dart';
 import 'package:whispers_of_tea/model/store_model.dart';
-
-import 'model/commodity_list_by_page_model.dart';
-import 'model/store_list_model.dart';
 
 class AppNet {
   static Dio dio = Dio();
@@ -90,7 +89,6 @@ class AppNet {
   static Future<CommodityListModel> queryByPage({required String id}) async {
     String qbu = '$_queryByPage/$id';
     Response response = await dio.get(qbu, options: options);
-    print(response.data);
     CommodityListModel model = CommodityListModel.fromJson(response.data);
     return model;
   }

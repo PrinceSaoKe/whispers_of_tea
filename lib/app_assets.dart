@@ -18,6 +18,7 @@ class AppAssets {
   static const String chayuImg = '$_imagesPath/chayu.png';
   static const String girlImg = '$_imagesPath/girl.png';
   static const String noImg = '$_imagesPath/no_image.png';
+  static const String launchPageImg = '$_imagesPath/launch_page.png';
 
   /// 诗词卡片相关图片
   static const String poetryCardPath = '$_imagesPath/poetry_card';
@@ -132,6 +133,8 @@ class AppAssets {
   static const String ancientTeaTech7 = '$_teaTechPath/ancient_tech_7.png';
   static const String ancientTeaTech8 = '$_teaTechPath/ancient_tech_8.png';
 
+  static const String ancientTeaImg = '$_teaTechPath/ancient_tech_img.png';
+
   /// 登录注册相关图片
   static const String _loginPath = '$_imagesPath/login';
 
@@ -146,6 +149,8 @@ class AppAssets {
   static const String brewTeaTech4 = '$_brewTeaTechPath/brew_tea_tech_4.png';
   static const String brewTeaTech5 = '$_brewTeaTechPath/brew_tea_tech_5.png';
   static const String brewTeaTech6 = '$_brewTeaTechPath/brew_tea_tech_6.png';
+
+  static const String brewTeaImg = '$_brewTeaTechPath/brew_tea_img.png';
 
   /// 动画
   static const String _animationsPath = '$_imagesPath/animations';
