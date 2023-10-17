@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
+import 'package:whispers_of_tea/addons/app_data.dart';
 import 'package:whispers_of_tea/model/commodity_by_id_model.dart';
 import 'package:whispers_of_tea/model/commodity_list_by_page_model.dart';
 import 'package:whispers_of_tea/model/login_model.dart';
@@ -9,17 +12,46 @@ import 'package:whispers_of_tea/model/store_model.dart';
 class AppNet {
   static Dio dio = Dio();
 
-  static Options options = Options(headers: {'Token': ''});
+  static Options options = Options(
+    headers: {'Token': AppData.getString(AppData.token)},
+  );
 
   /// URL
-  static const baseUrl = 'https://i5101b0918.oicp.vip';
+  static late String baseUrl;
 
-  static const _loginUrl = '$baseUrl/user/login';
-  static const _registerUrl = '$baseUrl/user/register';
-  static const _sendPinUrl = '$baseUrl/email/sendEmail';
-  static const _queryByIdUrl = '$baseUrl/commodity/queryById';
-  static const _queryByPage = '$baseUrl/commodity/queryByPage';
-  static const _queryByStoreId = '$baseUrl/commodity/queryByStoreId';
+  static late String _loginUrl;
+  static late String _registerUrl;
+  static late String _sendPinUrl;
+  static late String _queryByIdUrl;
+  static late String _queryByPage;
+  static late String _queryByStoreId;
+
+  /// 动态获取baseUrl
+  static getBaseUrl() async {
+    Response response =
+        await dio.get('https://princesaoke.github.io/PrinceSaoKe.txt');
+    if (response.statusCode == 200) {
+      Map map = jsonDecode(response.toString());
+      String url = map['whispers_of_tea_base_url'];
+      baseUrl = url;
+    } else {
+      // baseUrl = 'https://i5101b0918.oicp.vip';
+      baseUrl = 'https://saoke.fun';
+    }
+    print('------------------$baseUrl------------------');
+
+    _getAllUrl();
+  }
+
+  /// 获取到baseUrl后为所有Url赋值
+  static _getAllUrl() {
+    _loginUrl = '$baseUrl/user/login';
+    _registerUrl = '$baseUrl/user/register';
+    _sendPinUrl = '$baseUrl/email/sendEmail';
+    _queryByIdUrl = '$baseUrl/commodity/queryById';
+    _queryByPage = '$baseUrl/commodity/queryByPage';
+    _queryByStoreId = '$baseUrl/commodity/queryByStoreId';
+  }
 
   /// 设置token
   static _setToken(String token) {
@@ -40,9 +72,11 @@ class AppNet {
     });
     Response response = await dio.post(_loginUrl, data: formData);
     LoginModel model = LoginModel.fromJson(response.data);
-    // 更新token
+    // 若登录成功，更新token
     if (model.token != null) {
       _setToken(model.token!);
+      // 更新用户数据
+      AppData.setString(AppData.userEmail, email);
     }
     return model;
   }

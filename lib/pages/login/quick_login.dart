@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whispers_of_tea/addons/app_data.dart';
 import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_router.dart';
@@ -20,6 +21,18 @@ class QuickLoginPage extends StatefulWidget {
 class _QuickLoginPageState extends State<QuickLoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  String? userEmail = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _getUserEmail();
+  }
+
+  _getUserEmail() async {
+    userEmail = await AppData.getString(AppData.userEmail);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +65,15 @@ class _QuickLoginPageState extends State<QuickLoginPage> {
                     style: AppStyle.loginPageText,
                   ),
                 ),
-                const SizedBox(height: 30),
-                const Center(
-                  child: Text(
-                    '2596818595@qq.com',
-                    style: AppStyle.loginPageText,
-                  ),
-                ),
+                SizedBox(height: userEmail == null ? 0 : 30),
+                userEmail == null
+                    ? const SizedBox(height: 0)
+                    : Center(
+                        child: Text(
+                          userEmail!,
+                          style: AppStyle.loginPageText,
+                        ),
+                      ),
                 const SizedBox(height: 25),
                 LoginTextfield(
                   label: '邮箱',

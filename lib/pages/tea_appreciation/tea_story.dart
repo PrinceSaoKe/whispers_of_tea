@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
-import 'package:whispers_of_tea/widgets/navigation.dart';
 import 'package:whispers_of_tea/widgets/teapot_label.dart';
 
 class TeaStoryPage extends StatelessWidget {
@@ -15,6 +15,12 @@ class TeaStoryPage extends StatelessWidget {
       body: Stack(
         children: [
           const ImageBackground(),
+          Positioned(bottom: -50, child: Image.asset(AppAssets.navTreeImg)),
+          Positioned(
+            top: 50,
+            right: -30,
+            child: Image.asset(AppAssets.girlImg),
+          ),
           ScrollConfiguration(
             behavior:
                 ScrollConfiguration.of(context).copyWith(overscroll: false),
@@ -44,7 +50,7 @@ class TeaStoryPage extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(bottom: 0, child: Navigation(needBgImg: false)),
+          // const Positioned(bottom: 0, child: Navigation(needBgImg: false)),
         ],
       ),
     );
