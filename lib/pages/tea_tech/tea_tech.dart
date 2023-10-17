@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_router.dart';
+import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/widgets/bottom_label_card.dart';
 import 'package:whispers_of_tea/widgets/image_background.dart';
@@ -25,7 +27,7 @@ class TeaTechPage extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.fromLTRB(30, 0, 30, 20),
                   child: BottomLabelCard(
-                    height: 230,
+                    height: 200,
                     label: '古法制茶',
                     imagePath: AppAssets.teaTech1,
                     route: AppRouter.ancientTech,
@@ -35,50 +37,94 @@ class TeaTechPage extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.fromLTRB(30, 0, 30, 20),
                   child: BottomLabelCard(
-                    height: 230,
+                    height: 200,
                     label: '泡茶工艺',
                     imagePath: AppAssets.teaTech2,
                     route: AppRouter.brewTeaTech,
                     labelHeight: 50,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 30, 20),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: AppTheme.ancientTechImgBgColor,
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 170,
-                          height: 170,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            image: const DecorationImage(
-                              image: AssetImage(AppAssets.ancientTeaImg),
-                              // image: AssetImage(AppAssets.brewTeaImg),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        ),
-                        const Column(
-                          children: [
-                            Text('前往体验制茶步骤'),
-                            SizedBox(height: 20),
-                            Icon(Icons.arrow_right_alt),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                _getToMakeTeaCard(),
+                _getToBrewTeaCard(),
               ],
             ),
           ),
           // const Positioned(bottom: 0, child: Navigation()),
         ],
+      ),
+    );
+  }
+
+  _getToMakeTeaCard() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(30, 0, 30, 20),
+      child: GestureDetector(
+        onTap: () {
+          Get.toNamed(AppRouter.makeTea);
+        },
+        child: Container(
+          padding: const EdgeInsets.only(right: 10),
+          decoration: BoxDecoration(
+            color: AppTheme.ancientTechImgBgColor,
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  image: const DecorationImage(
+                    image: AssetImage(AppAssets.ancientTeaImg),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              const Column(
+                children: [
+                  Text('前往体验\n    制茶步骤', style: AppStyle.ancientTechImgText),
+                  SizedBox(height: 10),
+                  Icon(
+                    Icons.chevron_right,
+                    color: AppTheme.ancientTechImgTextColor,
+                    size: 30,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  _getToBrewTeaCard() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(30, 0, 30, 20),
+      child: GestureDetector(
+        onTap: () {
+          Get.toNamed(AppRouter.brewTea);
+        },
+        child: Container(
+          height: 100,
+          decoration: BoxDecoration(
+            color: AppTheme.brewTeaImgTextColor,
+            borderRadius: BorderRadius.circular(50),
+          ),
+          child: Row(
+            children: [
+              Image.asset(AppAssets.brewTeaImg),
+              const SizedBox(width: 5),
+              const Text('前往体验泡茶步骤', style: AppStyle.ancientTechImgText),
+              const Icon(
+                Icons.chevron_right,
+                color: AppTheme.ancientTechImgTextColor,
+                size: 30,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

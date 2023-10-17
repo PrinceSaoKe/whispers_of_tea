@@ -266,4 +266,10 @@ class AppStyle {
     fontFamily: siYuanHeiTiFont,
     color: Color(-12094379),
   );
+
+  static const ancientTechImgText = TextStyle(
+    fontSize: 20,
+    fontFamily: jinShanCloudFont,
+    color: AppTheme.ancientTechImgTextColor,
+  );
 }
