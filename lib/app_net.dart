@@ -35,8 +35,7 @@ class AppNet {
       String url = map['whispers_of_tea_base_url'];
       baseUrl = url;
     } else {
-      // baseUrl = 'https://i5101b0918.oicp.vip';
-      baseUrl = 'https://saoke.fun';
+      baseUrl = 'https://i5101b0918.oicp.vip';
     }
     print('------------------$baseUrl------------------');
 
