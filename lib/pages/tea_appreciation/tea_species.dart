@@ -58,6 +58,7 @@ class _TeaSpeciesPageState extends State<TeaSpeciesPage> {
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   mainAxisSpacing: 10,
                   shrinkWrap: true,
+                  childAspectRatio: 0.94,
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
                     _getTeaCard('绿茶', AppAssets.greenTea, 0),

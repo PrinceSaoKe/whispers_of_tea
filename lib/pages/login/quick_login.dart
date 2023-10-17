@@ -90,6 +90,11 @@ class _QuickLoginPageState extends State<QuickLoginPage> {
                   text: '一键登录',
                   backgroundColor: AppTheme.loginButtonDarkColor,
                   onTap: () async {
+                    if (emailController.text == '') {
+                      Get.dialog(const MessageDialog(title: '请输入邮箱'));
+                    } else if (passwordController.text == '') {
+                      Get.dialog(const MessageDialog(title: '请输入密码'));
+                    }
                     LoginModel model = await AppNet.login(
                       email: emailController.text,
                       password: passwordController.text,

@@ -67,7 +67,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               height: double.infinity,
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
               child: Text(teaInfo.name, style: AppStyle.teaIntroNameStyle),
             ),
             Expanded(
-              flex: 1,
+              flex: 5,
               child: Center(
                 child: Text(
                   '${teaInfo.temperature}℃',
@@ -86,7 +86,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 7,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -102,7 +102,7 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 5,
               child: Center(
                 child: Text(
                   teaInfo.warmOrCold,

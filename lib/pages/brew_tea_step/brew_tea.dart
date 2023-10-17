@@ -112,7 +112,7 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
       padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: Container(
         width: 365,
-        height: 150,
+        height: 200,
         alignment: Alignment.center,
         padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
         decoration: const BoxDecoration(
