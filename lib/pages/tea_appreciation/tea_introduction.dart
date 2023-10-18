@@ -127,7 +127,11 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
         children: [
           Positioned(
             right: 0,
-            child: Image.asset('${AppAssets.teaIntroDeco1}${teaInfo.name}.png'),
+            child: Image.asset(
+              '${AppAssets.teaIntroDeco1}${teaInfo.name}.png',
+              width: 60,
+              height: 60,
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 25),
@@ -139,8 +143,10 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('冲泡需要注意水温和冲泡方法：',
-                    style: AppStyle.teaIntroLabelStyle),
+                const Text(
+                  '冲泡需要注意水温和冲泡方法：',
+                  style: AppStyle.teaIntroLabelStyle,
+                ),
                 Text(teaInfo.makeTeaMethod, style: AppStyle.teaIntroTextStyle),
                 const SizedBox(height: 5),
                 const Text('茶叶的冲泡比例：', style: AppStyle.teaIntroLabelStyle),
@@ -160,7 +166,11 @@ class _TeaIntroductionPageState extends State<TeaIntroductionPage> {
         children: [
           Positioned(
             right: 0,
-            child: Image.asset('${AppAssets.teaIntroDeco2}${teaInfo.name}.png'),
+            child: Image.asset(
+              '${AppAssets.teaIntroDeco2}${teaInfo.name}.png',
+              width: 60,
+              height: 60,
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20),
