@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:whispers_of_tea/addons/app_data.dart';
 import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_router.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 
 void main() async {
+  // 获取baseUrl
   await AppNet.getBaseUrl();
+  // 读取缓存token
   WidgetsFlutterBinding.ensureInitialized();
+  String? cacheToken = await AppData.getString(AppData.token);
+  AppNet.setToken(cacheToken ?? '');
   // 指定了应用程序的首选方向为纵向（竖屏）方向
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,

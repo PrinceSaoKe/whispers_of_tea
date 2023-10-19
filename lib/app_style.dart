@@ -272,4 +272,10 @@ class AppStyle {
     fontFamily: jinShanCloudFont,
     color: AppTheme.ancientTechImgTextColor,
   );
+
+  static const nextStepText = TextStyle(
+    fontSize: 24,
+    fontFamily: huangYouFont,
+    color: Colors.white,
+  );
 }

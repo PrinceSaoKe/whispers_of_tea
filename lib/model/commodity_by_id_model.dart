@@ -1,3 +1,4 @@
+import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/model/base_model.dart';
 
 class CommodityModel extends BaseModel {
@@ -43,7 +44,9 @@ class CommodityModel extends BaseModel {
       price: double.tryParse(data['price'].toString()),
       link: data['link'],
       description: data['description'],
-      coverImage: data['coverImage'],
+      coverImage: data['coverImage'] == null
+          ? null
+          : AppNet.baseUrl + data['coverImage'].toString(),
       imageList:
           data['imageList'] == null ? [] : List<String>.from(data['imageList']),
     );
@@ -57,7 +60,9 @@ class CommodityModel extends BaseModel {
       price: double.tryParse(map['price'].toString()),
       link: map['link'],
       description: map['description'],
-      coverImage: map['coverImage'],
+      coverImage: map['coverImage'] == null
+          ? null
+          : AppNet.baseUrl + map['coverImage'].toString(),
       imageList:
           map['imageList'] == null ? [] : List<String>.from(map['imageList']),
     );

@@ -37,8 +37,6 @@ class AppNet {
     } else {
       baseUrl = 'https://i5101b0918.oicp.vip';
     }
-    print('------------------$baseUrl------------------');
-
     _getAllUrl();
   }
 
@@ -53,7 +51,7 @@ class AppNet {
   }
 
   /// 设置token
-  static _setToken(String token) {
+  static setToken(String token) {
     if (options.headers == null) {
       throw Exception('options.headers为null！');
     }
@@ -73,7 +71,7 @@ class AppNet {
     LoginModel model = LoginModel.fromJson(response.data);
     // 若登录成功，更新token
     if (model.token != null) {
-      _setToken(model.token!);
+      setToken(model.token!);
       // 更新用户数据
       AppData.setString(AppData.userEmail, email);
     }

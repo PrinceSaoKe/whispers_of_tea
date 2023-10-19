@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whispers_of_tea/app_assets.dart';
-import 'package:whispers_of_tea/app_net.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/model/commodity_by_id_model.dart';
-import 'package:whispers_of_tea/model/commodity_list_by_page_model.dart';
+import 'package:whispers_of_tea/model/test_models.dart';
 import 'package:whispers_of_tea/widgets/gradient_background.dart';
 import 'package:whispers_of_tea/widgets/my_app_bar.dart';
 
@@ -20,15 +19,15 @@ class _ShowcasePageState extends State<ShowcasePage> {
   final PageController controller = PageController();
   int selectedTabIndex = 0;
   final List<String> tabTitles = ['茶叶', '茶品', '茶具'];
-  List<CommodityModel> dataList = [];
-  bool isLoading = true;
+  List<CommodityModel> dataList = TestModels.commodityModelList[0];
+  bool isLoading = false;
 
-  @override
-  void initState() {
-    super.initState();
-    isLoading = true;
-    _loadImageList(selectedTabIndex);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   isLoading = true;
+  //   _loadImageList(selectedTabIndex);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +57,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
                     onPageChanged: (index) {
                       setState(() {
                         selectedTabIndex = index; // 更新选中的索引
-                        isLoading = true;
+                        // isLoading = true;
                         _loadImageList(selectedTabIndex);
                       });
                     },
@@ -107,9 +106,11 @@ class _ShowcasePageState extends State<ShowcasePage> {
 
   _loadImageList(int index) async {
     // 根据索引加载对应的 imageList
-    CommodityListModel model = await AppNet.queryByPage(id: '$index');
+    // CommodityListModel model =
+    //     await AppNet.queryByPage(id: (index + 2).toString());
     setState(() {
-      dataList = model.records ?? [];
+      dataList = TestModels.commodityModelList[index];
+      // dataList = model.records ?? [];
       isLoading = false;
     });
   }
@@ -188,7 +189,8 @@ class _ShowcasePageState extends State<ShowcasePage> {
             ),
             child: model.coverImage == null
                 ? Image.asset(AppAssets.noImg, fit: BoxFit.cover)
-                : Image.network(model.coverImage!, fit: BoxFit.cover),
+                : Image.asset(model.coverImage!, fit: BoxFit.cover),
+            // : Image.network(model.coverImage!, fit: BoxFit.cover),
           ),
           Container(
             height: 35,

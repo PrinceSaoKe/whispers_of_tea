@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/constant/brew_tea_step.dart';
+import 'package:whispers_of_tea/widgets/next_step_button.dart';
 
 class BrewTeaPage extends StatefulWidget {
   const BrewTeaPage({super.key});
@@ -14,49 +15,51 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
   int currStep = 0;
   String title = '';
   String content = '';
+  bool play = false;
 
   /// 切换泡茶步骤
-  _getStepContent(int step) {
+  _setStep(int step) {
     currStep = step;
     title = BrewTeaStep.brewTeaStep[currStep]['title'] ?? '';
     content = BrewTeaStep.brewTeaStep[currStep]['text'] ?? '';
+    if (step > 0) {
+      play = true;
+    }
   }
 
   @override
   void initState() {
-    _getStepContent(0);
+    _setStep(0);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          setState(() {
-            if (currStep < BrewTeaStep.brewTeaStep.length - 1) {
-              _getStepContent(currStep + 1);
-            }
-          });
-        },
-        child: Stack(
-          children: [
-            _getBackground(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: [
-                  const SizedBox(height: 40),
-                  _getTitle(),
-                  const SizedBox(height: 10),
-                  _getContentRect(),
-                ],
-              ),
+      body: Stack(
+        children: [
+          _getBackground(),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
+                const SizedBox(height: 40),
+                _getTitle(),
+                const SizedBox(height: 10),
+                _getContentRect(),
+              ],
             ),
-            Positioned(
-              bottom: 90,
-              right: 130,
+          ),
+          Positioned(
+            bottom: 90,
+            right: 130,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  play = true;
+                });
+              },
               child: Container(
                 width: 200,
                 height: 150,
@@ -64,20 +67,32 @@ class _BrewTeaPageState extends State<BrewTeaPage> {
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
                     image: AssetImage(
-                      currStep > 1 ? AppAssets.gif1 : AppAssets.gif2,
+                      play
+                          ? (currStep > 2 ? AppAssets.gif1 : AppAssets.gif2)
+                          : AppAssets.classImg,
                     ),
-                    scale: 2.5,
                   ),
                 ),
               ),
             ),
-            Positioned(
-              bottom: 20,
-              right: -30,
-              child: Image.asset(AppAssets.girlImg),
-            ),
-          ],
-        ),
+          ),
+          Positioned(
+            bottom: 20,
+            right: -30,
+            child: Image.asset(AppAssets.girlImg),
+          ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: NextStepButton(onTap: () {
+              setState(() {
+                if (currStep < BrewTeaStep.brewTeaStep.length - 1) {
+                  _setStep(currStep + 1);
+                }
+              });
+            }),
+          ),
+        ],
       ),
     );
   }

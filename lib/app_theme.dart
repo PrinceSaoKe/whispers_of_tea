@@ -54,6 +54,7 @@ class AppTheme {
   static const Color ancientTechImgBgColor = Color(0xFFF6F5D6);
   static const Color ancientTechImgTextColor = Color(0xFF3C4938);
   static const Color brewTeaImgTextColor = Color(0xFFFAA598);
+  static const Color nextStepButtonBgColor = Color(0x71035E1A);
 
   /// TeaInfo主题色
   static const Color greenTeaThemeColor = Color(0xFF6DA67E);

@@ -3,6 +3,7 @@ import 'package:whispers_of_tea/app_assets.dart';
 import 'package:whispers_of_tea/app_style.dart';
 import 'package:whispers_of_tea/app_theme.dart';
 import 'package:whispers_of_tea/constant/make_tea_step.dart';
+import 'package:whispers_of_tea/widgets/next_step_button.dart';
 
 class MakeTeaPage extends StatefulWidget {
   const MakeTeaPage({super.key});
@@ -15,72 +16,87 @@ class _MakeTeaPageState extends State<MakeTeaPage> {
   int currStep = 0;
   String title = '';
   String content = '';
+  bool play = false;
 
   /// 切换制茶步骤
-  _getStepContent(int step) {
+  _setStep(int step) {
     currStep = step;
     title = MakeTeaStep.makeTeaStep[currStep]['title'] ?? '';
     content = MakeTeaStep.makeTeaStep[currStep]['text'] ?? '';
+    if (step > 0) {
+      play = true;
+    }
   }
 
   @override
   void initState() {
-    _getStepContent(0);
+    _setStep(0);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          setState(() {
-            if (currStep < MakeTeaStep.makeTeaStep.length - 1) {
-              _getStepContent(currStep + 1);
-            }
-          });
-        },
-        child: Stack(
-          children: [
-            _getBackground(),
-            Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: AppTheme.makeTeaBgColor,
+      body: Stack(
+        children: [
+          _getBackground(),
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: AppTheme.makeTeaBgColor,
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
+                const SizedBox(height: 70),
+                _getTitleCircle(),
+                _getContentRect(),
+              ],
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: [
-                  const SizedBox(height: 70),
-                  _getTitleCircle(),
-                  _getContentRect(),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 110,
-              right: 90,
+          ),
+          Positioned(
+            bottom: 110,
+            right: 90,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  play = true;
+                });
+              },
               child: Container(
                 width: 240,
                 height: 120,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(
-                    image: AssetImage(AppAssets.gif3),
-                    scale: 2.5,
+                  image: DecorationImage(
+                    image:
+                        AssetImage(play ? AppAssets.gif3 : AppAssets.classImg),
                   ),
                 ),
               ),
             ),
-            Positioned(
-              bottom: 20,
-              right: -70,
-              child: Image.asset(AppAssets.girlImg),
+          ),
+          Positioned(
+            bottom: 20,
+            right: -70,
+            child: Image.asset(AppAssets.girlImg),
+          ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: NextStepButton(
+              onTap: () {
+                setState(() {
+                  if (currStep < MakeTeaStep.makeTeaStep.length - 1) {
+                    _setStep(currStep + 1);
+                  }
+                });
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
