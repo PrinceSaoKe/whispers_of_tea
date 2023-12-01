@@ -2,7 +2,7 @@
 
 一款介绍中国制茶历史、宣传茶艺文化、带动茶叶市场及其衍生产业发展的茶文化传播APP。
 
-![茶语](./preview/post.png "茶语")
+<img src="./preview/post.png" alt="海报" title="海报" width="300"/>
 
 ## Getting Started
 
@@ -19,13 +19,13 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 预览 / Preview
 
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-17.png)
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-14.png)
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-16.png)
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View.png)
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-12.png)
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-9.png)
-![](./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-3.png)
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-17.png" alt="闪屏" title="闪屏" width="300"/>
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-14.png" alt="首页" title="首页" width="300"/>
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-16.png" alt="登录" title="登录" width="300"/>
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View.png" alt="制茶" title="制茶" width="300"/>
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-12.png" alt="茶语百科" title="茶语百科" width="300"/>
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-9.png" alt="茶叶介绍" title="茶叶介绍" width="300"/>
+<img src="./preview/prototype/iPhone%2012%20Pro%20Mockup%20Front%20View-3.png" alt="饮茶礼节" title="饮茶礼节" width="300"/>
 
 ## 开发环境 / Development Environment
 
